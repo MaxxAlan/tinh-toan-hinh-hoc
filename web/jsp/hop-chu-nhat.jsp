@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hop-chu-nhat">
     <meta property="og:title" content="Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta property="og:description" content="Tính thể tích, diện tích xung quanh, diện tích toàn phần và đường chéo hình hộp chữ nhật.">
-    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
@@ -30,7 +30,7 @@
     <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hop-chu-nhat">
     <meta property="twitter:title" content="Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta property="twitter:description" content="Tính thể tích, diện tích xung quanh, diện tích toàn phần và đường chéo hình hộp chữ nhật.">
-    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script>

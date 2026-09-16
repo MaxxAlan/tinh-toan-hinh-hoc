@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/lang-tru">
     <meta property="og:title" content="Hình Lăng Trụ Đứng - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta property="og:description" content="Tính thể tích và diện tích hình lăng trụ đứng từ diện tích đáy và chiều cao.">
-    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
@@ -30,7 +30,7 @@
     <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/lang-tru">
     <meta property="twitter:title" content="Hình Lăng Trụ Đứng - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta property="twitter:description" content="Tính thể tích và diện tích hình lăng trụ đứng từ diện tích đáy và chiều cao.">
-    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script>

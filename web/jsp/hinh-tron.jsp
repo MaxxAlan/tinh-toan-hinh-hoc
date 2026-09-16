@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-tron">
     <meta property="og:title" content="Hình Tròn - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta property="og:description" content="Tính chu vi, diện tích, đường kính hình tròn chính xác theo số Pi kèm giải thích chi tiết.">
-    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
@@ -30,7 +30,7 @@
     <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-tron">
     <meta property="twitter:title" content="Hình Tròn - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta property="twitter:description" content="Tính chu vi, diện tích, đường kính hình tròn chính xác theo số Pi kèm giải thích chi tiết.">
-    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script>

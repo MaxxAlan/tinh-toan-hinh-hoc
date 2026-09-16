@@ -1,5 +1,7 @@
 # 📐 Ứng Dụng Web Tính Toán Hình Học (`tinh-toan-hinh-hoc`)
 
+![Banner Tính Toán Hình Học](web/assets/og-image.jpg)
+
 Ứng dụng Web Java Servlet / JSP toàn diện phục vụ giảng dạy, học tập và ôn thi môn Toán (Hình học phẳng 2D và Hình học không gian 3D).
 Repository: [https://github.com/MaxxAlan/tinh-toan-hinh-hoc](https://github.com/MaxxAlan/tinh-toan-hinh-hoc)
 
