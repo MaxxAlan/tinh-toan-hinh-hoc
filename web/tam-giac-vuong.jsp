@@ -192,7 +192,7 @@
     </script>
 
     <footer class="app-footer">
-        © 2026 Tính Toán Hình Học. Hệ thống công cụ học tập và ôn luyện hình học trực quan.
+        © MaxxAlan. Hệ thống công cụ học tập và ôn luyện hình học trực quan.
     </footer>
 
 </body>
