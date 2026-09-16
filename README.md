@@ -40,7 +40,7 @@ Repository: [https://github.com/MaxxAlan/tinh-toan-hinh-hoc](https://github.com/
 
 ### Cách 2: Triển khai file .war lên Server Tomcat
 1. Đóng gói dự án bằng lệnh Ant:
-   `ash
+   `bash
    ant dist
    `
 2. File hocJSP.war được sinh ra trong thư mục dist/.
@@ -52,7 +52,7 @@ Repository: [https://github.com/MaxxAlan/tinh-toan-hinh-hoc](https://github.com/
    `
    http://localhost:8080/hocJSP/
    `
-   *(Trang chủ chào đón: 	inh-toan-hinh-hoc.html)*
+   *(Trang chủ chào đón: 	tinh-toan-hinh-hoc.html)*
 
 ---
 
