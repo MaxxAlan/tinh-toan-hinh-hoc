@@ -77,9 +77,9 @@
                 <label>Cạnh (a):</label>
                 <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Cạnh a">
             </div>
-            <div class="form-row">
-                <input type="submit" value="Tính toán" class="btn-calc">
-                <button type="reset" class="btn-calc" style="margin-left: 10px; background-color: #718096;" onclick="window.location.href=window.location.pathname">Làm mới</button>
+            <div class="form-actions">
+                <button type="submit" class="btn-calc">⚡ Tính toán</button>
+                <button type="reset" class="btn-reset" onclick="window.location.href=window.location.pathname">🔄 Làm mới</button>
             </div>
         </form>
 
@@ -108,7 +108,7 @@
             </div>
         </div>
         <% } %>
-                <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
             </div>
         </div>
     </div>
