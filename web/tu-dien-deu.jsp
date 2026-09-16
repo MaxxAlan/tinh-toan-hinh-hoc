@@ -32,7 +32,7 @@
     <meta property="twitter:description" content="Công thức tính nhanh thể tích, chiều cao, diện tích toàn phần của khối tứ diện đều cạnh a ôn thi THPT.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>

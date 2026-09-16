@@ -32,7 +32,7 @@
     <meta property="twitter:description" content="Định lý Pythagore, tính cạnh huyền, chiều cao ứng với cạnh huyền, diện tích và chu vi tam giác vuông.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
