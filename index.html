@@ -1,125 +1,61 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📐 Tính Toán Hình Học (Geometry WebApp)</title>
-    <link rel="icon" type="image/svg+xml" href="web/favicon.svg">
+<html>
+    <head>
+        <title>Tính Toán Hình Học</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/svg+xml" href="web/favicon.svg">
     <link rel="stylesheet" href="web/css/style.css">
-    <style>
-        .badge-github {
-            display: inline-block;
-            background: #2b6cb0;
-            color: #ffffff;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .intro-banner {
-            background: #ebf8ff;
-            border: 1px solid #bee3f8;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .intro-banner h2 {
-            color: #2b6cb0;
-            margin-top: 0;
-            font-size: 1.4em;
-        }
-        .btn-repo {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 9px 18px;
-            background: #2d3748;
-            color: #ffffff;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: background 0.2s;
-        }
-        .btn-repo:hover {
-            background: #1a202c;
-            color: #ffffff;
-        }
-        .note-backend {
-            background: #fffaf0;
-            border: 1px solid #ecc94b;
-            border-left: 4px solid #d69e2e;
-            border-radius: 6px;
-            padding: 14px 16px;
-            margin: 20px 0;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-    </style>
-    <script>
-        MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-</head>
-<body>
-    <div class="container">
-        <div style="text-align: center;">
-            <span class="badge-github">🚀 GitHub Pages Showcase</span>
-        </div>
-        <h1>📏 Tính Toán Hình Học</h1>
+        <script>
+            MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>📏 Tính Toán Hình Học</h1>
+            <p style="text-align:center; color:#718096;">Chọn hình bạn muốn tính toán:</p>
 
-        <div class="intro-banner">
-            <h2>Hệ thống Tính Toán & Giải Chi Tiết 19 Hình Học 2D & 3D</h2>
-            <p style="color: #4a5568;">Dự án xây dựng bằng Java Servlet / JSP, MathJax (LaTeX) và SVG tương tác trực quan theo chuẩn SGK & Ôn thi THPT.</p>
-            <a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc" class="btn-repo" target="_blank">⭐ Xem Mã Nguồn Trên GitHub</a>
-        </div>
+            <div class="shape-group">
+                <h2>📐 Hình 2D (Hình phẳng)</h2>
+                <ul class="shape-list">
+                    <li><a href="hinh-vuong">Hình Vuông</a></li>
+                    <li><a href="hinh-chu-nhat">Hình Chữ Nhật</a></li>
+                    <li><a href="hinh-tron">Hình Tròn</a></li>
+                    <li><a href="hinh-tam-giac">Tam Giác</a></li>
+                    <li><a href="tam-giac-deu">Tam Giác Đều</a></li>
+                    <li><a href="tam-giac-vuong">Tam Giác Vuông</a></li>
+                    <li><a href="hinh-thang">Hình Thang</a></li>
+                    <li><a href="hinh-binh-hanh">Hình Bình Hành</a></li>
+                    <li><a href="hinh-thoi">Hình Thoi</a></li>
+                </ul>
+            </div>
 
-        <div class="note-backend">
-            <strong>ℹ️ Lưu ý về môi trường chạy:</strong>
-            <p>GitHub Pages là hosting tĩnh (Static Hosting). Để trải nghiệm đầy đủ tính năng tính toán Servlet backend, bạn có thể clone dự án về máy tính và chạy với <strong>Apache Tomcat 9.0</strong> hoặc NetBeans IDE theo hướng dẫn trong README.</p>
-        </div>
+            <div class="shape-group">
+                <h2>📦 Hình 3D (Hình không gian — Lớp 12)</h2>
+                <ul class="shape-list">
+                    <li><a href="hop-chu-nhat">Hộp Chữ Nhật</a></li>
+                    <li><a href="hinh-lap-phuong">Lập Phương</a></li>
+                    <li><a href="lang-tru">Lăng Trụ</a></li>
+                    <li><a href="hinh-chop">Hình Chóp</a></li>
+                    <li><a href="hinh-chop-cut">Chóp Cụt</a></li>
+                    <li><a href="hinh-tru">Hình Trụ</a></li>
+                    <li><a href="hinh-non">Hình Nón</a></li>
+                    <li><a href="hinh-non-cut">Nón Cụt</a></li>
+                    <li><a href="hinh-cau">Hình Cầu</a></li>
+                    <li><a href="tu-dien-deu">Tứ Diện Đều</a></li>
+                </ul>
+            </div>
 
-        <div class="shape-group">
-            <h2>📐 Danh mục Hình 2D (Hình phẳng)</h2>
-            <ul class="shape-list">
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-vuong.jsp">Hình Vuông</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-chu-nhat.jsp">Hình Chữ Nhật</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-tron.jsp">Hình Tròn</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-tam-giac.jsp">Tam Giác Thường</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/tam-giac-deu.jsp">Tam Giác Đều</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/tam-giac-vuong.jsp">Tam Giác Vuông</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-thang.jsp">Hình Thang</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-binh-hanh.jsp">Hình Bình Hành</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-thoi.jsp">Hình Thoi</a></li>
-            </ul>
+            <div class="formula-box" style="margin-top:25px;">
+                <h2>💡 Công thức tính nhanh (Thi THPT)</h2>
+                <ul>
+                    <li>Lập phương cạnh \(a\) nội tiếp cầu: \(R = \dfrac{a\sqrt{3}}{2}\)</li>
+                    <li>Tỉ số thể tích chóp cùng đỉnh: \(\dfrac{V_{S.A'B'C'}}{V_{S.ABC}} = \dfrac{SA'}{SA}\cdot\dfrac{SB'}{SB}\cdot\dfrac{SC'}{SC}\)</li>
+                    <li>Tứ diện đều cạnh \(a\): \(V = \dfrac{a^3\sqrt{2}}{12},\quad S_{tp} = a^2\sqrt{3},\quad h = \dfrac{a\sqrt{6}}{3}\)</li>
+                    <li>Tam giác vuông quay quanh 1 cạnh góc vuông \(\Rightarrow\) Hình nón \((r=\text{cạnh kia},\ h=\text{cạnh quay})\)</li>
+                </ul>
+            </div>
         </div>
-
-        <div class="shape-group">
-            <h2>📦 Danh mục Hình 3D (Hình không gian — Lớp 12)</h2>
-            <ul class="shape-list">
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hop-chu-nhat.jsp">Hộp Chữ Nhật</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-lap-phuong.jsp">Lập Phương</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/lang-tru.jsp">Lăng Trụ</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-chop.jsp">Hình Chóp</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-chop-cut.jsp">Chóp Cụt</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-tru.jsp">Hình Trụ</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-non.jsp">Hình Nón</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-non-cut.jsp">Nón Cụt</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/hinh-cau.jsp">Hình Cầu</a></li>
-                <li><a href="https://github.com/MaxxAlan/tinh-toan-hinh-hoc/blob/main/web/tu-dien-deu.jsp">Tứ Diện Đều</a></li>
-            </ul>
-        </div>
-
-        <div class="formula-box" style="margin-top:25px;">
-            <h2>💡 Công thức tính nhanh (Thi THPT)</h2>
-            <ul>
-                <li>Lập phương cạnh \(a\) nội tiếp cầu: \(R = \dfrac{a\sqrt{3}}{2}\)</li>
-                <li>Tỉ số thể tích chóp cùng đỉnh: \(\dfrac{V_{S.A'B'C'}}{V_{S.ABC}} = \dfrac{SA'}{SA}\cdot\dfrac{SB'}{SB}\cdot\dfrac{SC'}{SC}\)</li>
-                <li>Tứ diện đều cạnh \(a\): \(V = \dfrac{a^3\sqrt{2}}{12},\quad S_{tp} = a^2\sqrt{3},\quad h = \dfrac{a\sqrt{6}}{3}\)</li>
-                <li>Tam giác vuông quay quanh 1 cạnh góc vuông \(\Rightarrow\) Hình nón \((r=\text{cạnh kia},\ h=\text{cạnh quay})\)</li>
-            </ul>
-        </div>
-    </div>
-</body>
+    </body>
 </html>
