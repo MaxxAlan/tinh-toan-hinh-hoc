@@ -45,7 +45,7 @@ Repository: [https://github.com/MaxxAlan/tinh-toan-hinh-hoc](https://github.com/
    `
 2. File hocJSP.war được sinh ra trong thư mục dist/.
 3. Copy file hocJSP.war vào thư mục webapps/ của Apache Tomcat:
-   `ash
+   `bash
    cp dist/hocJSP.war <TOMCAT_HOME>/webapps/
    `
 4. Khởi động Tomcat và truy cập trình duyệt:
