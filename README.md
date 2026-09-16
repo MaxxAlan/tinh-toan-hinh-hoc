@@ -63,4 +63,4 @@ Dự án tích hợp bộ kiểm thử tự động toàn diện qua kịch bả
 ---
 
 ## 📄 Bản quyền
-Dự án được xây dựng phục vụ môn học **PRJ301 - Java Web Application Development**.
+Dự án **deo-co-ban-quyen**.
