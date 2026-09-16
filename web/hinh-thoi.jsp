@@ -16,7 +16,9 @@
     <div class="container">
         <h1>Hình Thoi</h1>
 
-        <div class="svg-wrap">
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
             <svg id="rhombusSvg" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg">
                 <!-- Hình thoi (4 đỉnh) -->
                 <polygon id="svgPoly" points="140,25 240,110 140,195 40,110" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
@@ -56,8 +58,9 @@
                 <li>Bán kính đường tròn nội tiếp: \(r = \dfrac{d_1 \cdot d_2}{4a}\)</li>
             </ul>
         </div>
-
-        <% if (request.getAttribute("error") != null) { %>
+            </div>
+            <div class="calc-col-right">
+                <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
@@ -106,8 +109,9 @@
             </div>
         </div>
         <% } %>
-
-        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
     </div>
 
     <script>

@@ -16,7 +16,9 @@
     <div class="container">
         <h1>Hộp Chữ Nhật (Hình Hộp Chữ Nhật)</h1>
 
-        <div class="svg-wrap">
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
             <svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="40,70 180,70 180,170 40,170" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
                 <polygon points="40,70 80,30 220,30 180,70" fill="#dbeafe" stroke="#2b6cb0" stroke-width="2"/>
@@ -38,8 +40,9 @@
                 <li>Bán kính mặt cầu ngoại tiếp: \(R = \dfrac{\sqrt{a^2 + b^2 + c^2}}{2}\)</li>
             </ul>
         </div>
-
-        <% if (request.getAttribute("error") != null) { %>
+            </div>
+            <div class="calc-col-right">
+                <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
@@ -84,8 +87,9 @@
             </div>
         </div>
         <% } %>
-
-        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
     </div>
 
     <script>

@@ -16,7 +16,9 @@
     <div class="container">
         <h1>Hình Chóp Cụt</h1>
 
-        <div class="svg-wrap">
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
             <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="25,170 215,170 185,135" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
                 <polygon points="75,55 160,55 145,35" fill="#dbeafe" stroke="#2b6cb0" stroke-width="2"/>
@@ -37,8 +39,9 @@
                 <li>(S = dt đáy lớn, S' = dt đáy nhỏ, h = chiều cao)</li>
             </ul>
         </div>
-
-        <% if (request.getAttribute("error") != null) { %>
+            </div>
+            <div class="calc-col-right">
+                <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
@@ -71,8 +74,9 @@
             </div>
         </div>
         <% } %>
-
-        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
     </div>
 
     <script>

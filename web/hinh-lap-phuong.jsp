@@ -16,7 +16,9 @@
     <div class="container">
         <h1>Hình Lập Phương</h1>
 
-        <div class="svg-wrap">
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
             <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="35,75 135,75 135,175 35,175" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
                 <polygon points="35,75 75,35 175,35 135,75" fill="#dbeafe" stroke="#2b6cb0" stroke-width="2"/>
@@ -37,8 +39,9 @@
                 <li>Bán kính mặt cầu nội tiếp: \(r = \dfrac{a}{2}\)</li>
             </ul>
         </div>
-
-        <% if (request.getAttribute("error") != null) { %>
+            </div>
+            <div class="calc-col-right">
+                <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
@@ -79,8 +82,9 @@
             </div>
         </div>
         <% } %>
-
-        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
     </div>
 
     <script>

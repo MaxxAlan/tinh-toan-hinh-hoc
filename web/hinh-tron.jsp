@@ -16,7 +16,9 @@
     <div class="container">
         <h1>Hình Tròn</h1>
 
-        <div class="svg-wrap">
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
             <svg id="circleSvg" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
                 <circle id="svgCircle" cx="120" cy="110" r="75" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
                 <line id="svgRadiusLine" x1="120" y1="110" x2="195" y2="110" stroke="#e53e3e" stroke-width="2" stroke-dasharray="4,3"/>
@@ -33,8 +35,9 @@
                 <li>Đường kính: \(d = 2r\)</li>
             </ul>
         </div>
-
-        <% if (request.getAttribute("error") != null) { %>
+            </div>
+            <div class="calc-col-right">
+                <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
@@ -67,8 +70,9 @@
             </div>
         </div>
         <% } %>
-
-        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
     </div>
 
     <script>

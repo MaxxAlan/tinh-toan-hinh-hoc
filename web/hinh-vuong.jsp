@@ -16,7 +16,9 @@
     <div class="container">
         <h1>Hình Vuông</h1>
 
-        <div class="svg-wrap">
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
             <svg id="sqSvg" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
                 <rect id="svgSq" x="40" y="40" width="140" height="140" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2" rx="3"/>
                 <line id="svgDiag" x1="40" y1="40" x2="180" y2="180" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,4"/>
@@ -36,8 +38,9 @@
                 <li>Bán kính nội tiếp: \(r = \dfrac{a}{2}\)</li>
             </ul>
         </div>
-
-        <% if (request.getAttribute("error") != null) { %>
+            </div>
+            <div class="calc-col-right">
+                <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
@@ -78,8 +81,9 @@
             </div>
         </div>
         <% } %>
-
-        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
     </div>
 
     <script>

@@ -16,7 +16,9 @@
     <div class="container">
         <h1>Tam Giác Vuông</h1>
 
-        <div class="svg-wrap">
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
             <svg id="tgvSvg" viewBox="0 0 290 190" xmlns="http://www.w3.org/2000/svg">
                 <polygon id="svgPoly" points="50,150 50,40 210,150" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
                 <path id="svgSqMarker" d="M 50 135 L 65 135 L 65 150" fill="none" stroke="#2b6cb0" stroke-width="1.5"/>
@@ -37,8 +39,9 @@
                 <li>Bán kính ngoại tiếp: \(R = \dfrac{c}{2}\) | Bán kính nội tiếp: \(r = \dfrac{a + b - c}{2}\)</li>
             </ul>
         </div>
-
-        <% if (request.getAttribute("error") != null) { %>
+            </div>
+            <div class="calc-col-right">
+                <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
@@ -87,8 +90,9 @@
             </div>
         </div>
         <% } %>
-
-        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
     </div>
 
     <script>
