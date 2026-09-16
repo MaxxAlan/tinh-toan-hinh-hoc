@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Primary Meta Tags -->
+    <title>Tam Giác Thường - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Tam Giác Thường - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Tính diện tích tam giác theo công thức Heron, tính chu vi và bán kính đường tròn ngoại tiếp / nội tiếp.">
+    <meta name="author" content="MaxxAlan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2b6cb0">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-tam-giac">
+    <meta property="og:title" content="Tam Giác Thường - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Tính diện tích tam giác theo công thức Heron, tính chu vi và bán kính đường tròn ngoại tiếp / nội tiếp.">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-tam-giac">
+    <meta property="twitter:title" content="Tam Giác Thường - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Tính diện tích tam giác theo công thức Heron, tính chu vi và bán kính đường tròn ngoại tiếp / nội tiếp.">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <link rel="icon" type="image/svg+xml" href="web/favicon.svg">
+    <link rel="stylesheet" href="web/css/style.css">
+    <script>
+        MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hình Tam Giác</h1>
+
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
+            <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="90,30 25,145 215,145" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+                <line x1="90" y1="30" x2="90" y2="145" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text id="svgLabelA" x="120" y="162" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">a (đáy)</text>
+                <text id="svgLabelB" x="42" y="85" font-size="12" font-weight="600" fill="#2b6cb0">b</text>
+                <text id="svgLabelC" x="160" y="85" font-size="12" font-weight="600" fill="#2b6cb0">c</text>
+                <text id="svgLabelH" x="97" y="90" font-size="11" font-weight="600" fill="#e53e3e">h</text>
+            </svg>
+        </div>
+
+        <div class="formula-box">
+            <h2>📐 Công thức</h2>
+            <ul>
+                <li>Chu vi: \(C = a + b + c\)</li>
+                <li>Diện tích cơ bản: \(S = \dfrac{1}{2}\cdot a \cdot h\)</li>
+                <li>Công thức Heron: \(S = \sqrt{p(p-a)(p-b)(p-c)},\quad p = \dfrac{a+b+c}{2}\)</li>
+                <li>Bán kính ngoại tiếp: \(R = \dfrac{abc}{4S}\) | Bán kính nội tiếp: \(r = \dfrac{S}{p}\)</li>
+            </ul>
+        </div>
+            </div>
+            <div class="calc-col-right">
+                <div id="clientErrorBox" style="display:none; color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;"></div>
+        <form class="calc-form" onsubmit="calculate(); return false;">
+            <div class="form-row">
+                <label>Cạnh đáy (a):</label>
+                <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Cạnh a">
+            </div>
+            <div class="form-row">
+                <label>Cạnh bên 1 (b):</label>
+                <input type="number" id="inputB" step="any" name="b" required value="${param.b}" placeholder="Cạnh b">
+            </div>
+            <div class="form-row">
+                <label>Cạnh bên 2 (c):</label>
+                <input type="number" id="inputC" step="any" name="c" required value="${param.c}" placeholder="Cạnh c">
+            </div>
+            <div class="form-row">
+                <label>Chiều cao (h) ứng với a:</label>
+                <input type="number" id="inputH" step="any" name="h" required value="${param.h}" placeholder="Chiều cao h">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-calc">⚡ Tính toán</button>
+                <button type="reset" class="btn-reset" onclick="window.location.href=window.location.pathname">🔄 Làm mới</button>
+            </div>
+        </form>
+
+        
+        <div id="clientResultBox" class="result-box" style="display:none;">
+            <h2>📊 Kết quả & Các bước giải chi tiết</h2>
+            <div id="clientSteps"></div>
+        </div>
+    
+                <a href="./" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateSvgShape() {
+            var inA = parseFloat(document.getElementById('inputA').value);
+            var inB = parseFloat(document.getElementById('inputB').value);
+            var inC = parseFloat(document.getElementById('inputC').value);
+            var inH = parseFloat(document.getElementById('inputH').value);
+            document.getElementById('svgLabelA').textContent = (!isNaN(inA) && inA > 0) ? ('a = ' + inA) : 'a (đáy)';
+            document.getElementById('svgLabelB').textContent = (!isNaN(inB) && inB > 0) ? ('b = ' + inB) : 'b';
+            document.getElementById('svgLabelC').textContent = (!isNaN(inC) && inC > 0) ? ('c = ' + inC) : 'c';
+            document.getElementById('svgLabelH').textContent = (!isNaN(inH) && inH > 0) ? ('h = ' + inH) : 'h';
+        }
+        window.addEventListener('DOMContentLoaded', updateSvgShape);
+        document.getElementById('inputA').addEventListener('input', updateSvgShape);
+        document.getElementById('inputB').addEventListener('input', updateSvgShape);
+        document.getElementById('inputC').addEventListener('input', updateSvgShape);
+        document.getElementById('inputH').addEventListener('input', updateSvgShape);
+    </script>
+
+    
+    <script>
+        function showError(msg) {
+            var errBox = document.getElementById('clientErrorBox');
+            errBox.style.display = 'block';
+            errBox.innerHTML = '<strong>Lỗi:</strong> ' + msg;
+            var resBox = document.getElementById('clientResultBox');
+            if (resBox) resBox.style.display = 'none';
+        }
+
+        function showResult(steps) {
+            var errBox = document.getElementById('clientErrorBox');
+            if (errBox) errBox.style.display = 'none';
+
+            var resBox = document.getElementById('clientResultBox');
+            var stepsContainer = document.getElementById('clientSteps');
+            stepsContainer.innerHTML = '';
+
+            steps.forEach(function(s) {
+                var div = document.createElement('div');
+                div.className = 'step-detail';
+                div.innerHTML = '<p><strong>' + s.t + '</strong></p>' +
+                                '<p>\(' + s.m + '\) <strong>' + s.v + '</strong> <span class="unit-badge">' + s.u + '</span></p>';
+                stepsContainer.appendChild(div);
+            });
+
+            resBox.style.display = 'block';
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                MathJax.typesetPromise([resBox]);
+            }
+        }
+    </script>
+
+    <script>
+        
+        function calculate() {
+            var a = parseFloat(document.getElementById('inputA').value);
+            var b = parseFloat(document.getElementById('inputB').value);
+            var c = parseFloat(document.getElementById('inputC').value);
+            if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) { showError("Ba cạnh tam giác phải lớn hơn 0."); return; }
+            if (a + b <= c || a + c <= b || b + c <= a) { showError("Ba cạnh không thỏa mãn bất đẳng thức tam giác (tổng 2 cạnh phải lớn hơn cạnh còn lại)."); return; }
+            var p = (a + b + c) / 2;
+            var peri = a + b + c;
+            var s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+            var r_out = (a * b * c) / (4 * s);
+            var r_in = s / p;
+            showResult([
+                { t: "1. Chu vi (C):", m: "C = a + b + c = " + a + " + " + b + " + " + c + " = ", v: peri.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" },
+                { t: "2. Diện tích (Heron):", m: "S = \sqrt{p(p-a)(p-b)(p-c)} \approx ", v: s.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị diện tích" },
+                { t: "3. Bán kính ngoại tiếp (R):", m: "R = \dfrac{abc}{4S} \approx ", v: r_out.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" },
+                { t: "4. Bán kính nội tiếp (r):", m: "r = \dfrac{S}{p} \approx ", v: r_in.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" }
+            ]);
+        }
+    
+    </script>
+</body>
+
+</html>

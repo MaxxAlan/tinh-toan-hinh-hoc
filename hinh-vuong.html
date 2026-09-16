@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Primary Meta Tags -->
+    <title>Hình Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Hình Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Tính diện tích, chu vi, đường chéo và bán kính ngoại tiếp hình vuông với công thức và các bước giải chi tiết.">
+    <meta name="author" content="MaxxAlan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2b6cb0">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-vuong">
+    <meta property="og:title" content="Hình Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Tính diện tích, chu vi, đường chéo và bán kính ngoại tiếp hình vuông với công thức và các bước giải chi tiết.">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-vuong">
+    <meta property="twitter:title" content="Hình Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Tính diện tích, chu vi, đường chéo và bán kính ngoại tiếp hình vuông với công thức và các bước giải chi tiết.">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <link rel="icon" type="image/svg+xml" href="web/favicon.svg">
+    <link rel="stylesheet" href="web/css/style.css">
+    <script>
+        MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hình Vuông</h1>
+
+        <div class="calc-layout">
+            <div class="calc-col-left">
+                <div class="svg-wrap">
+            <svg id="sqSvg" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
+                <rect id="svgSq" x="40" y="40" width="140" height="140" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2" rx="3"/>
+                <line id="svgDiag" x1="40" y1="40" x2="180" y2="180" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,4"/>
+                <circle id="svgInc" cx="110" cy="110" r="70" fill="none" stroke="#38a169" stroke-width="1" stroke-dasharray="3,3"/>
+                <text id="svgLabelA" x="110" y="28" text-anchor="middle" font-size="13" font-weight="600" fill="#2b6cb0">a</text>
+                <text id="svgLabelD" x="115" y="105" font-size="11" fill="#e53e3e">d</text>
+            </svg>
+        </div>
+
+        <div class="formula-box">
+            <h2>📐 Công thức</h2>
+            <ul>
+                <li>Chu vi: \(C = 4a\)</li>
+                <li>Diện tích: \(S = a^2\)</li>
+                <li>Đường chéo: \(d = a\sqrt{2}\)</li>
+                <li>Bán kính ngoại tiếp: \(R = \dfrac{a\sqrt{2}}{2}\)</li>
+                <li>Bán kính nội tiếp: \(r = \dfrac{a}{2}\)</li>
+            </ul>
+        </div>
+            </div>
+            <div class="calc-col-right">
+                <div id="clientErrorBox" style="display:none; color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;"></div>
+        <form class="calc-form" onsubmit="calculate(); return false;">
+            <div class="form-row">
+                <label>Cạnh (a):</label>
+                <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Nhập cạnh a">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-calc">⚡ Tính toán</button>
+                <button type="reset" class="btn-reset" onclick="window.location.href=window.location.pathname">🔄 Làm mới</button>
+            </div>
+        </form>
+
+        
+        <div id="clientResultBox" class="result-box" style="display:none;">
+            <h2>📊 Kết quả & Các bước giải chi tiết</h2>
+            <div id="clientSteps"></div>
+        </div>
+    
+                <a href="./" class="btn-home">🏠 Về trang chủ</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateSvgShape() {
+            var valA = document.getElementById('inputA').value.trim();
+            var inA = parseFloat(valA);
+            var side = (!isNaN(inA) && inA > 0) ? inA : 10;
+            // chuẩn hóa scale trong hộp 150x150
+            var s = 140;
+            var rect = document.getElementById('svgSq');
+            var diag = document.getElementById('svgDiag');
+            var inc = document.getElementById('svgInc');
+            var labelA = document.getElementById('svgLabelA');
+            labelA.textContent = (!isNaN(inA) && inA > 0) ? ("a = " + inA) : "a";
+        }
+        window.addEventListener('DOMContentLoaded', updateSvgShape);
+        document.getElementById('inputA').addEventListener('input', updateSvgShape);
+    </script>
+
+    
+    <script>
+        function showError(msg) {
+            var errBox = document.getElementById('clientErrorBox');
+            errBox.style.display = 'block';
+            errBox.innerHTML = '<strong>Lỗi:</strong> ' + msg;
+            var resBox = document.getElementById('clientResultBox');
+            if (resBox) resBox.style.display = 'none';
+        }
+
+        function showResult(steps) {
+            var errBox = document.getElementById('clientErrorBox');
+            if (errBox) errBox.style.display = 'none';
+
+            var resBox = document.getElementById('clientResultBox');
+            var stepsContainer = document.getElementById('clientSteps');
+            stepsContainer.innerHTML = '';
+
+            steps.forEach(function(s) {
+                var div = document.createElement('div');
+                div.className = 'step-detail';
+                div.innerHTML = '<p><strong>' + s.t + '</strong></p>' +
+                                '<p>\(' + s.m + '\) <strong>' + s.v + '</strong> <span class="unit-badge">' + s.u + '</span></p>';
+                stepsContainer.appendChild(div);
+            });
+
+            resBox.style.display = 'block';
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                MathJax.typesetPromise([resBox]);
+            }
+        }
+    </script>
+
+    <script>
+        
+        function calculate() {
+            var a = parseFloat(document.getElementById('inputA').value);
+            if (isNaN(a) || a <= 0) { showError("Vui lòng nhập độ dài cạnh a hợp lệ lớn hơn 0."); return; }
+            var p = 4 * a;
+            var s = a * a;
+            var d = a * Math.SQRT2;
+            var r = d / 2;
+            showResult([
+                { t: "1. Chu vi (C):", m: "C = 4 \times a = 4 \times " + a + " = ", v: p.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" },
+                { t: "2. Diện tích (S):", m: "S = a^2 = " + a + "^2 = ", v: s.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị diện tích" },
+                { t: "3. Đường chéo (d):", m: "d = a\sqrt{2} = " + a + "\sqrt{2} \approx ", v: d.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" },
+                { t: "4. Bán kính đường tròn ngoại tiếp (R):", m: "R = \dfrac{d}{2} = \dfrac{" + a + "\sqrt{2}}{2} \approx ", v: r.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" }
+            ]);
+        }
+    
+    </script>
+</body>
+
+</html>
