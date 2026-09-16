@@ -1,10 +1,12 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Primary Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Primary Meta Tags -->
     <title>Hình Nón Cụt - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
     <meta name="title" content="Hình Nón Cụt - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta name="description" content="Tính thể tích và diện tích xung quanh hình nón cụt từ bán kính 2 đáy và chiều cao.">

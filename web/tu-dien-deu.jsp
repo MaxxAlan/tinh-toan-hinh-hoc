@@ -1,10 +1,12 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Primary Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Primary Meta Tags -->
     <title>Tứ Diện Đều - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
     <meta name="title" content="Tứ Diện Đều - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta name="description" content="Công thức tính nhanh thể tích, chiều cao, diện tích toàn phần của khối tứ diện đều cạnh a ôn thi THPT.">

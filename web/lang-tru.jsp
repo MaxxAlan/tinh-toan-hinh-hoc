@@ -1,10 +1,12 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Primary Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Primary Meta Tags -->
     <title>Hình Lăng Trụ Đứng - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
     <meta name="title" content="Hình Lăng Trụ Đứng - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta name="description" content="Tính thể tích và diện tích hình lăng trụ đứng từ diện tích đáy và chiều cao.">
