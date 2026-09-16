@@ -7,18 +7,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Primary Meta Tags -->
-    <title>Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
-    <meta name="title" content="Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta name="description" content="Tính thể tích, diện tích xung quanh, diện tích toàn phần và đường chéo hình hộp chữ nhật.">
+    <title>Hình Thang - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Hình Thang - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Tính diện tích và chu vi hình thang từ đáy lớn, đáy nhỏ, chiều cao và hai cạnh bên.">
     <meta name="author" content="MaxxAlan">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2b6cb0">
 
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hop-chu-nhat">
-    <meta property="og:title" content="Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta property="og:description" content="Tính thể tích, diện tích xung quanh, diện tích toàn phần và đường chéo hình hộp chữ nhật.">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-thang">
+    <meta property="og:title" content="Hình Thang - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Tính diện tích và chu vi hình thang từ đáy lớn, đáy nhỏ, chiều cao và hai cạnh bên.">
     <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -27,12 +27,12 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hop-chu-nhat">
-    <meta property="twitter:title" content="Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta property="twitter:description" content="Tính thể tích, diện tích xung quanh, diện tích toàn phần và đường chéo hình hộp chữ nhật.">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-thang">
+    <meta property="twitter:title" content="Hình Thang - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Tính diện tích và chu vi hình thang từ đáy lớn, đáy nhỏ, chiều cao và hai cạnh bên.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
-    <link rel="icon" type="image/svg+xml" href="web/favicon.svg">
-    <link rel="stylesheet" href="web/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -40,30 +40,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hộp Chữ Nhật (Hình Hộp Chữ Nhật)</h1>
+        <h1>Hình Thang</h1>
 
         <div class="calc-layout">
             <div class="calc-col-left">
                 <div class="svg-wrap">
-            <svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="40,70 180,70 180,170 40,170" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
-                <polygon points="40,70 80,30 220,30 180,70" fill="#dbeafe" stroke="#2b6cb0" stroke-width="2"/>
-                <polygon points="180,70 220,30 220,130 180,170" fill="#bfdbfe" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="40" y1="170" x2="220" y2="30" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="5,3"/>
-                <text id="svgLabelA" x="110" y="188" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">a</text>
-                <text id="svgLabelB" x="195" y="125" font-size="12" font-weight="600" fill="#2b6cb0">b</text>
-                <text id="svgLabelC" x="200" y="55" font-size="12" font-weight="600" fill="#2b6cb0">c</text>
-                <text x="125" y="95" font-size="11" fill="#e53e3e">d</text>
+            <svg id="thangSvg" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+                <polygon id="svgPoly" points="70,35 190,35 240,135 20,135" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+                <line id="svgH" x1="70" y1="35" x2="70" y2="135" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text id="svgLabelA" x="130" y="25" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">a (đáy nhỏ)</text>
+                <text id="svgLabelB" x="130" y="152" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">b (đáy lớn)</text>
+                <text id="svgLabelH" x="55" y="88" font-size="11" font-weight="600" fill="#e53e3e">h</text>
             </svg>
         </div>
 
         <div class="formula-box">
             <h2>📐 Công thức</h2>
             <ul>
-                <li>Thể tích: \(V = a \cdot b \cdot c\)</li>
-                <li>Diện tích toàn phần: \(S_{tp} = 2(ab + bc + ca)\)</li>
-                <li>Đường chéo: \(d = \sqrt{a^2 + b^2 + c^2}\)</li>
-                <li>Bán kính mặt cầu ngoại tiếp: \(R = \dfrac{\sqrt{a^2 + b^2 + c^2}}{2}\)</li>
+                <li>Diện tích: \(S = \dfrac{(a+b)\cdot h}{2}\)</li>
+                <li>Đường trung bình: \(m = \dfrac{a+b}{2}\)</li>
             </ul>
         </div>
             </div>
@@ -71,16 +66,16 @@
                 <div id="clientErrorBox" style="display:none; color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;"></div>
         <form class="calc-form" onsubmit="calculate(); return false;">
             <div class="form-row">
-                <label>Chiều dài (a):</label>
-                <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Chiều dài a">
+                <label>Đáy nhỏ (a):</label>
+                <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Đáy nhỏ a">
             </div>
             <div class="form-row">
-                <label>Chiều rộng (b):</label>
-                <input type="number" id="inputB" step="any" name="b" required value="${param.b}" placeholder="Chiều rộng b">
+                <label>Đáy lớn (b):</label>
+                <input type="number" id="inputB" step="any" name="b" required value="${param.b}" placeholder="Đáy lớn b">
             </div>
             <div class="form-row">
-                <label>Chiều cao (c):</label>
-                <input type="number" id="inputC" step="any" name="c" required value="${param.c}" placeholder="Chiều cao c">
+                <label>Chiều cao (h):</label>
+                <input type="number" id="inputH" step="any" name="h" required value="${param.h}" placeholder="Chiều cao h">
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn-calc">Tính toán</button>
@@ -94,7 +89,7 @@
             <div id="clientSteps"></div>
         </div>
     
-                <a href="index.html" class="btn-home">Về trang chủ</a>
+                <a href="../../index.html" class="btn-home">Về trang chủ</a>
             </div>
         </div>
     </div>
@@ -103,15 +98,15 @@
         function updateSvgShape() {
             var inA = parseFloat(document.getElementById('inputA').value);
             var inB = parseFloat(document.getElementById('inputB').value);
-            var inC = parseFloat(document.getElementById('inputC').value);
-            document.getElementById('svgLabelA').textContent = (!isNaN(inA) && inA > 0) ? ('a = ' + inA) : 'a';
-            document.getElementById('svgLabelB').textContent = (!isNaN(inB) && inB > 0) ? ('b = ' + inB) : 'b';
-            document.getElementById('svgLabelC').textContent = (!isNaN(inC) && inC > 0) ? ('c = ' + inC) : 'c';
+            var inH = parseFloat(document.getElementById('inputH').value);
+            document.getElementById('svgLabelA').textContent = (!isNaN(inA) && inA > 0) ? ('a = ' + inA) : 'a (đáy nhỏ)';
+            document.getElementById('svgLabelB').textContent = (!isNaN(inB) && inB > 0) ? ('b = ' + inB) : 'b (đáy lớn)';
+            document.getElementById('svgLabelH').textContent = (!isNaN(inH) && inH > 0) ? ('h = ' + inH) : 'h';
         }
         window.addEventListener('DOMContentLoaded', updateSvgShape);
         document.getElementById('inputA').addEventListener('input', updateSvgShape);
         document.getElementById('inputB').addEventListener('input', updateSvgShape);
-        document.getElementById('inputC').addEventListener('input', updateSvgShape);
+        document.getElementById('inputH').addEventListener('input', updateSvgShape);
     </script>
 
     
@@ -153,16 +148,10 @@
             var a = parseFloat(document.getElementById('inputA').value);
             var b = parseFloat(document.getElementById('inputB').value);
             var h = parseFloat(document.getElementById('inputH').value);
-            if (isNaN(a) || isNaN(b) || isNaN(h) || a <= 0 || b <= 0 || h <= 0) { showError("Các kích thước chiều dài, rộng, cao phải lớn hơn 0."); return; }
-            var sxq = 2 * (a + b) * h;
-            var stp = sxq + 2 * a * b;
-            var v = a * b * h;
-            var d = Math.sqrt(a * a + b * b + h * h);
+            if (isNaN(a) || isNaN(b) || isNaN(h) || a <= 0 || b <= 0 || h <= 0) { showError("Các kích thước phải lớn hơn 0."); return; }
+            var s = ((a + b) * h) / 2;
             showResult([
-                { t: "1. Diện tích xung quanh (Sxq):", m: "S_{xq} = 2(a + b)h = ", v: sxq.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị diện tích" },
-                { t: "2. Diện tích toàn phần (Stp):", m: "S_{tp} = S_{xq} + 2ab = ", v: stp.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị diện tích" },
-                { t: "3. Thể tích (V):", m: "V = a \times b \times h = ", v: v.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị thể tích" },
-                { t: "4. Độ dài đường chéo (d):", m: "d = \sqrt{a^2 + b^2 + h^2} \approx ", v: d.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" }
+                { t: "1. Diện tích hình thang (S):", m: "S = \dfrac{(a + b)h}{2} = \dfrac{(" + a + " + " + b + ") \times " + h + "}{2} = ", v: s.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị diện tích" }
             ]);
         }
     

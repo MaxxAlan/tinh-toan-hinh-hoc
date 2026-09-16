@@ -7,18 +7,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Primary Meta Tags -->
-    <title>Hình Chóp - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
-    <meta name="title" content="Hình Chóp - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta name="description" content="Tính thể tích hình chóp V = 1/3 S.h và diện tích xung quanh các khối chóp đa giác.">
+    <title>Tam Giác Đều - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Tam Giác Đều - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Tính nhanh diện tích, chiều cao, chu vi và bán kính tam giác đều cạnh a chuẩn công thức THPT.">
     <meta name="author" content="MaxxAlan">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2b6cb0">
 
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-chop">
-    <meta property="og:title" content="Hình Chóp - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta property="og:description" content="Tính thể tích hình chóp V = 1/3 S.h và diện tích xung quanh các khối chóp đa giác.">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/tam-giac-deu">
+    <meta property="og:title" content="Tam Giác Đều - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Tính nhanh diện tích, chiều cao, chu vi và bán kính tam giác đều cạnh a chuẩn công thức THPT.">
     <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -27,12 +27,12 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-chop">
-    <meta property="twitter:title" content="Hình Chóp - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta property="twitter:description" content="Tính thể tích hình chóp V = 1/3 S.h và diện tích xung quanh các khối chóp đa giác.">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/tam-giac-deu">
+    <meta property="twitter:title" content="Tam Giác Đều - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Tính nhanh diện tích, chiều cao, chu vi và bán kính tam giác đều cạnh a chuẩn công thức THPT.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
-    <link rel="icon" type="image/svg+xml" href="web/favicon.svg">
-    <link rel="stylesheet" href="web/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -40,28 +40,29 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hình Chóp</h1>
+        <h1>Tam Giác Đều</h1>
 
         <div class="calc-layout">
             <div class="calc-col-left">
                 <div class="svg-wrap">
-            <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="35,180 185,180 155,140" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="110" y1="35" x2="35" y2="180" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="110" y1="35" x2="185" y2="180" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="110" y1="35" x2="155" y2="140" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="110" y1="35" x2="110" y2="165" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
-                <text x="110" y="28" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">S</text>
-                <text id="svgLabelH" x="115" y="105" font-size="11" font-weight="600" fill="#e53e3e">h</text>
-                <text id="svgLabelB" x="110" y="195" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">B (đáy)</text>
+            <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="120,25 25,175 215,175" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+                <line x1="120" y1="25" x2="120" y2="175" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <circle cx="120" cy="95" r="50" fill="none" stroke="#38a169" stroke-width="1" stroke-dasharray="3,3"/>
+                <circle cx="120" cy="125" r="28" fill="none" stroke="#d69e2e" stroke-width="1" stroke-dasharray="3,3"/>
+                <text id="svgLabelA" x="120" y="192" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">a</text>
+                <text x="125" y="105" font-size="11" fill="#e53e3e">h</text>
             </svg>
         </div>
 
         <div class="formula-box">
             <h2>📐 Công thức</h2>
             <ul>
-                <li>Thể tích: \(V = \dfrac{1}{3}\cdot B \cdot h\)</li>
-                <li>(B = diện tích đáy, h = chiều cao)</li>
+                <li>Chu vi: \(C = 3a\)</li>
+                <li>Diện tích: \(S = \dfrac{a^2\sqrt{3}}{4}\)</li>
+                <li>Chiều cao: \(h = \dfrac{a\sqrt{3}}{2}\)</li>
+                <li>Bán kính ngoại tiếp: \(R = \dfrac{a\sqrt{3}}{3}\)</li>
+                <li>Bán kính nội tiếp: \(r = \dfrac{a\sqrt{3}}{6}\)</li>
             </ul>
         </div>
             </div>
@@ -69,12 +70,8 @@
                 <div id="clientErrorBox" style="display:none; color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;"></div>
         <form class="calc-form" onsubmit="calculate(); return false;">
             <div class="form-row">
-                <label>Diện tích đáy (B):</label>
-                <input type="number" id="inputB" step="any" name="baseArea" required value="${param.baseArea}" placeholder="Diện tích đáy B">
-            </div>
-            <div class="form-row">
-                <label>Chiều cao (h):</label>
-                <input type="number" id="inputH" step="any" name="h" required value="${param.h}" placeholder="Chiều cao h">
+                <label>Cạnh (a):</label>
+                <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Nhập cạnh a">
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn-calc">Tính toán</button>
@@ -88,21 +85,18 @@
             <div id="clientSteps"></div>
         </div>
     
-                <a href="index.html" class="btn-home">Về trang chủ</a>
+                <a href="../../index.html" class="btn-home">Về trang chủ</a>
             </div>
         </div>
     </div>
 
     <script>
         function updateSvgShape() {
-            var inB = parseFloat(document.getElementById('inputB').value);
-            var inH = parseFloat(document.getElementById('inputH').value);
-            document.getElementById('svgLabelB').textContent = (!isNaN(inB) && inB > 0) ? ('B = ' + inB) : 'B (đáy)';
-            document.getElementById('svgLabelH').textContent = (!isNaN(inH) && inH > 0) ? ('h = ' + inH) : 'h';
+            var inA = parseFloat(document.getElementById('inputA').value);
+            document.getElementById('svgLabelA').textContent = (!isNaN(inA) && inA > 0) ? ('a = ' + inA) : 'a';
         }
         window.addEventListener('DOMContentLoaded', updateSvgShape);
-        document.getElementById('inputB').addEventListener('input', updateSvgShape);
-        document.getElementById('inputH').addEventListener('input', updateSvgShape);
+        document.getElementById('inputA').addEventListener('input', updateSvgShape);
     </script>
 
     
@@ -141,12 +135,17 @@
     <script>
         
         function calculate() {
-            var s_day = parseFloat(document.getElementById('inputS').value);
-            var h = parseFloat(document.getElementById('inputH').value);
-            if (isNaN(s_day) || isNaN(h) || s_day <= 0 || h <= 0) { showError("Diện tích đáy và chiều cao phải lớn hơn 0."); return; }
-            var v = (1 / 3) * s_day * h;
+            var a = parseFloat(document.getElementById('inputA').value);
+            if (isNaN(a) || a <= 0) { showError("Cạnh tam giác đều phải lớn hơn 0."); return; }
+            var p = 3 * a;
+            var h = (a * Math.sqrt(3)) / 2;
+            var s = (a * a * Math.sqrt(3)) / 4;
+            var r = (a * Math.sqrt(3)) / 3;
             showResult([
-                { t: "1. Thể tích hình chóp (V):", m: "V = \dfrac{1}{3}Bh = \dfrac{1}{3} \times " + s_day + " \times " + h + " = ", v: v.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị thể tích" }
+                { t: "1. Chu vi (C):", m: "C = 3a = 3 \times " + a + " = ", v: p.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" },
+                { t: "2. Chiều cao (h):", m: "h = \dfrac{a\sqrt{3}}{2} \approx ", v: h.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" },
+                { t: "3. Diện tích (S):", m: "S = \dfrac{a^2\sqrt{3}}{4} \approx ", v: s.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị diện tích" },
+                { t: "4. Bán kính ngoại tiếp (R):", m: "R = \dfrac{a\sqrt{3}}{3} \approx ", v: r.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" }
             ]);
         }
     
