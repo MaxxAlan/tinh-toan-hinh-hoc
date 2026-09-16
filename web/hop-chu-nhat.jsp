@@ -39,6 +39,22 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </head>
 <body>
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="header-inner">
+            <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24"><polygon points="3 20 21 20 12 4 3 20"></polygon><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+                </div>
+                <span>Tính Toán Hình Học</span>
+            </a>
+            <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="nav-back-link">
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span>Về trang chủ</span>
+            </a>
+        </div>
+    </header>
+
     <div class="container">
         <h1>Hộp Chữ Nhật (Hình Hộp Chữ Nhật)</h1>
 
@@ -58,7 +74,7 @@
         </div>
 
         <div class="formula-box">
-            <h2>📐 Công thức</h2>
+            <h2>Công thức</h2>
             <ul>
                 <li>Thể tích: \(V = a \cdot b \cdot c\)</li>
                 <li>Diện tích toàn phần: \(S_{tp} = 2(ab + bc + ca)\)</li>
@@ -94,26 +110,26 @@
 
         <% if (request.getAttribute("hcn3d") != null) { %>
         <div class="result-box">
-            <h2>📊 Kết quả & Các bước giải chi tiết</h2>
+            <h2>Kết quả & Các bước giải chi tiết</h2>
             <div class="step-detail">
                 <p><strong>1. Thể tích (V):</strong></p>
-                <p>\(V = a \times b \times c = ${param.a} \times ${param.b} \times ${param.c} = \) <strong><fmt:formatNumber value="${requestScope.hcn3d.getVolume()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị thể tích</span></p>
+                <p>\(V = a \times b \times c = ${param.a} \times ${param.b} \times ${param.c} = \) <strong><fmt:formatNumber value="${requestScope.hcn3d.getVolume()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị thể tích</span></p>
             </div>
             <div class="step-detail">
                 <p><strong>2. Diện tích toàn phần (S):</strong></p>
-                <p>\(S_{tp} = 2(ab + bc + ca) = 2(${param.a}\times${param.b} + ${param.b}\times${param.c} + ${param.c}\times${param.a}) = \) <strong><fmt:formatNumber value="${requestScope.hcn3d.getSurfaceArea()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị diện tích</span></p>
+                <p>\(S_{tp} = 2(ab + bc + ca) = 2(${param.a}\times${param.b} + ${param.b}\times${param.c} + ${param.c}\times${param.a}) = \) <strong><fmt:formatNumber value="${requestScope.hcn3d.getSurfaceArea()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị diện tích</span></p>
             </div>
             <div class="step-detail">
                 <p><strong>3. Đường chéo (d):</strong></p>
-                <p>\(d = \sqrt{a^2 + b^2 + c^2} = \sqrt{${param.a}^2 + ${param.b}^2 + ${param.c}^2} \approx \) <strong><fmt:formatNumber value="${requestScope.hcn3d.getDiagonal()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị dài</span></p>
+                <p>\(d = \sqrt{a^2 + b^2 + c^2} = \sqrt{${param.a}^2 + ${param.b}^2 + ${param.c}^2} \approx \) <strong><fmt:formatNumber value="${requestScope.hcn3d.getDiagonal()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị dài</span></p>
             </div>
             <div class="step-detail">
                 <p><strong>4. Bán kính mặt cầu ngoại tiếp (R):</strong></p>
-                <p>\(R = \dfrac{d}{2} = \dfrac{<fmt:formatNumber value="${requestScope.hcn3d.getDiagonal()}" pattern="#,##0.####"/>}{2} \approx \) <strong><fmt:formatNumber value="${requestScope.hcn3d.getCircumradius()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị dài</span></p>
+                <p>\(R = \dfrac{d}{2} = \dfrac{<fmt:formatNumber value="${requestScope.hcn3d.getDiagonal()}" pattern="#,##0.####"/>}{2} \approx \) <strong><fmt:formatNumber value="${requestScope.hcn3d.getCircumradius()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị dài</span></p>
             </div>
         </div>
         <% } %>
-                <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="btn-home">Về trang chủ</a>
+                <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="btn-home-bottom">Về trang chủ</a>
             </div>
         </div>
     </div>
@@ -132,5 +148,10 @@
         document.getElementById('inputB').addEventListener('input', updateSvgShape);
         document.getElementById('inputC').addEventListener('input', updateSvgShape);
     </script>
+
+    <footer class="app-footer">
+        © 2026 Tính Toán Hình Học. Hệ thống công cụ học tập và ôn luyện hình học trực quan.
+    </footer>
+
 </body>
 </html>

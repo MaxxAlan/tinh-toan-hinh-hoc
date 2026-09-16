@@ -39,6 +39,22 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </head>
 <body>
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="header-inner">
+            <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24"><polygon points="3 20 21 20 12 4 3 20"></polygon><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+                </div>
+                <span>Tính Toán Hình Học</span>
+            </a>
+            <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="nav-back-link">
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span>Về trang chủ</span>
+            </a>
+        </div>
+    </header>
+
     <div class="container">
         <h1>Hình Trụ</h1>
 
@@ -58,7 +74,7 @@
         </div>
 
         <div class="formula-box">
-            <h2>📐 Công thức</h2>
+            <h2>Công thức</h2>
             <ul>
                 <li>Thể tích: \(V = \pi r^2 h\)</li>
                 <li>Diện tích xung quanh: \(S_{xq} = 2\pi r h\)</li>
@@ -89,22 +105,22 @@
 
         <% if (request.getAttribute("tru") != null) { %>
         <div class="result-box">
-            <h2>📊 Kết quả & Các bước giải chi tiết</h2>
+            <h2>Kết quả & Các bước giải chi tiết</h2>
             <div class="step-detail">
                 <p><strong>1. Thể tích (V):</strong></p>
-                <p>\(V = \pi r^2 h = \pi \times ${param.r}^2 \times ${param.h} \approx \) <strong><fmt:formatNumber value="${requestScope.tru.getVolume()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị thể tích</span></p>
+                <p>\(V = \pi r^2 h = \pi \times ${param.r}^2 \times ${param.h} \approx \) <strong><fmt:formatNumber value="${requestScope.tru.getVolume()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị thể tích</span></p>
             </div>
             <div class="step-detail">
                 <p><strong>2. Diện tích xung quanh (S_xq):</strong></p>
-                <p>\(S_{xq} = 2\pi r h = 2 \times \pi \times ${param.r} \times ${param.h} \approx \) <strong><fmt:formatNumber value="${requestScope.tru.getLateralArea()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị diện tích</span></p>
+                <p>\(S_{xq} = 2\pi r h = 2 \times \pi \times ${param.r} \times ${param.h} \approx \) <strong><fmt:formatNumber value="${requestScope.tru.getLateralArea()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị diện tích</span></p>
             </div>
             <div class="step-detail">
                 <p><strong>3. Diện tích toàn phần (S_tp):</strong></p>
-                <p>\(S_{tp} = 2\pi r(h + r) = 2 \times \pi \times ${param.r} \times (${param.h} + ${param.r}) \approx \) <strong><fmt:formatNumber value="${requestScope.tru.getSurfaceArea()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị diện tích</span></p>
+                <p>\(S_{tp} = 2\pi r(h + r) = 2 \times \pi \times ${param.r} \times (${param.h} + ${param.r}) \approx \) <strong><fmt:formatNumber value="${requestScope.tru.getSurfaceArea()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị diện tích</span></p>
             </div>
         </div>
         <% } %>
-                <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="btn-home">Về trang chủ</a>
+                <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="btn-home-bottom">Về trang chủ</a>
             </div>
         </div>
     </div>
@@ -120,5 +136,10 @@
         document.getElementById('inputR').addEventListener('input', updateSvgShape);
         document.getElementById('inputH').addEventListener('input', updateSvgShape);
     </script>
+
+    <footer class="app-footer">
+        © 2026 Tính Toán Hình Học. Hệ thống công cụ học tập và ôn luyện hình học trực quan.
+    </footer>
+
 </body>
 </html>

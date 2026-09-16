@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="vi">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Primary Meta Tags -->
     <title>Tính Toán Hình Học - Giải Chi Tiết 19 Hình 2D & 3D Chuẩn SGK</title>
     <meta name="title" content="Tính Toán Hình Học - Giải Chi Tiết 19 Hình 2D & 3D Chuẩn SGK">
     <meta name="description" content="Hệ thống tính toán hình học trực quan, giải chi tiết chuẩn thi THPT.">
     <meta name="keywords" content="tính toán hình học, giải hình học, hình không gian 12, diện tích tam giác, thể tích chóp, hình nón, hình cầu, mathjax, svg hình học">
     <meta name="author" content="MaxxAlan">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2b6cb0">
+    <meta name="theme-color" content="#1d4ed8">
 
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="website">
@@ -22,7 +21,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+    <meta property="og:site_name" content="Tính Toán Hình Học">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -30,21 +29,40 @@
     <meta property="twitter:title" content="Tính Toán Hình Học - Giải Chi Tiết 19 Hình 2D & 3D Chuẩn SGK">
     <meta property="twitter:description" content="Hệ thống tính toán hình học trực quan, giải chi tiết chuẩn thi THPT.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
-        <link rel="icon" type="image/svg+xml" href="web/favicon.svg">
-        <link rel="stylesheet" href="./css/style.css">
-        <script>
-            MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
-    </head>
-    <body>
-        <div class="container">
-            <h1>📏 Tính Toán Hình Học</h1>
-            <p style="text-align:center; color:#718096;">Chọn hình bạn muốn tính toán:</p>
 
-            <div class="shapes-dashboard">
-<div class="shape-group">
-                <h2>📐 Hình 2D (Hình phẳng)</h2>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+    <!-- App Header & Brand -->
+    <header class="app-header">
+        <div class="header-inner">
+            <a href="tinh-toan-hinh-hoc.html" class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24"><polygon points="3 20 21 20 12 4 3 20"></polygon><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+                </div>
+                <span>Tính Toán Hình Học</span>
+            </a>
+            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Chuẩn SGK & THPT</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <h1>Tính Toán Hình Học Phẳng & Không Gian</h1>
+        <p class="page-desc">Hệ thống giải chi tiết từng bước 19 khối hình học 2D và 3D với mô phỏng trực quan.</p>
+
+        <div class="shapes-dashboard">
+            <!-- 2D Shapes Card -->
+            <section class="shape-group">
+                <h2>
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    Hình Phẳng (2D)
+                </h2>
                 <ul class="shape-list">
                     <li><a href="hinh-vuong">Hình Vuông</a></li>
                     <li><a href="hinh-chu-nhat">Hình Chữ Nhật</a></li>
@@ -56,10 +74,14 @@
                     <li><a href="hinh-binh-hanh">Hình Bình Hành</a></li>
                     <li><a href="hinh-thoi">Hình Thoi</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="shape-group">
-                <h2>📦 Hình 3D (Hình không gian — Lớp 12)</h2>
+            <!-- 3D Shapes Card -->
+            <section class="shape-group">
+                <h2>
+                    <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    Hình Không Gian (3D)
+                </h2>
                 <ul class="shape-list">
                     <li><a href="hop-chu-nhat">Hộp Chữ Nhật</a></li>
                     <li><a href="hinh-lap-phuong">Lập Phương</a></li>
@@ -72,18 +94,26 @@
                     <li><a href="hinh-cau">Hình Cầu</a></li>
                     <li><a href="tu-dien-deu">Tứ Diện Đều</a></li>
                 </ul>
-            </div>
-</div>
-
-            <div class="formula-box" style="margin-top:25px;">
-                <h2>💡 Công thức tính nhanh (Thi THPT)</h2>
-                <ul>
-                    <li>Lập phương cạnh \(a\) nội tiếp cầu: \(R = \dfrac{a\sqrt{3}}{2}\)</li>
-                    <li>Tỉ số thể tích chóp cùng đỉnh: \(\dfrac{V_{S.A'B'C'}}{V_{S.ABC}} = \dfrac{SA'}{SA}\cdot\dfrac{SB'}{SB}\cdot\dfrac{SC'}{SC}\)</li>
-                    <li>Tứ diện đều cạnh \(a\): \(V = \dfrac{a^3\sqrt{2}}{12},\quad S_{tp} = a^2\sqrt{3},\quad h = \dfrac{a\sqrt{6}}{3}\)</li>
-                    <li>Tam giác vuông quay quanh 1 cạnh góc vuông \(\Rightarrow\) Hình nón \((r=\text{cạnh kia},\ h=\text{cạnh quay})\)</li>
-                </ul>
-            </div>
+            </section>
         </div>
-    </body>
+
+        <!-- Formula Box -->
+        <section class="formula-box">
+            <h2>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                Công Thức Tính Nhanh (Trọng Tâm Ôn Thi THPT)
+            </h2>
+            <ul>
+                <li>Lập phương cạnh \(a\) nội tiếp mặt cầu: \(R = \dfrac{a\sqrt{3}}{2}\)</li>
+                <li>Tỉ số thể tích khối chóp tam giác: \(\dfrac{V_{S.A'B'C'}}{V_{S.ABC}} = \dfrac{SA'}{SA}\cdot\dfrac{SB'}{SB}\cdot\dfrac{SC'}{SC}\)</li>
+                <li>Khối tứ diện đều cạnh \(a\): \(V = \dfrac{a^3\sqrt{2}}{12},\quad S_{tp} = a^2\sqrt{3},\quad h = \dfrac{a\sqrt{6}}{3}\)</li>
+                <li>Tam giác vuông quay quanh 1 cạnh góc vuông tạo thành hình nón: \(r = \text{cạnh còn lại},\ h = \text{cạnh trục quay}\)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        © 2026 Tính Toán Hình Học. Hệ thống công cụ học tập và ôn luyện hình học trực quan.
+    </footer>
+</body>
 </html>

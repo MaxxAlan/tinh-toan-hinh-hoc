@@ -1,36 +1,34 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Primary Meta Tags -->
     <title>Hình Thoi - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
     <meta name="title" content="Hình Thoi - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta name="description" content="Tính chu vi và diện tích hình thoi qua hai đường chéo hoặc cạnh và chiều cao.">
+    <meta name="description" content="Hình bình hành có 4 cạnh bằng nhau. Hai đường chéo vuông góc với nhau tại trung điểm của mỗi đường.">
     <meta name="author" content="MaxxAlan">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2b6cb0">
+    <meta name="theme-color" content="#1d4ed8">
 
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-thoi">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/html/hinh-thoi.html">
     <meta property="og:title" content="Hình Thoi - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta property="og:description" content="Tính chu vi và diện tích hình thoi qua hai đường chéo hoặc cạnh và chiều cao.">
+    <meta property="og:description" content="Hình bình hành có 4 cạnh bằng nhau. Hai đường chéo vuông góc với nhau tại trung điểm của mỗi đường.">
     <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+    <meta property="og:site_name" content="Tính Toán Hình Học">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-thoi">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/html/hinh-thoi.html">
     <meta property="twitter:title" content="Hình Thoi - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta property="twitter:description" content="Tính chu vi và diện tích hình thoi qua hai đường chéo hoặc cạnh và chiều cao.">
+    <meta property="twitter:description" content="Hình bình hành có 4 cạnh bằng nhau. Hai đường chéo vuông góc với nhau tại trung điểm của mỗi đường.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../css/style.css">
     <script>
@@ -39,10 +37,35 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
 </head>
 <body>
-    <div class="container">
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="header-inner">
+            <a href="../../index.html" class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24"><polygon points="3 20 21 20 12 4 3 20"></polygon><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+                </div>
+                <span>Tính Toán Hình Học</span>
+            </a>
+            <a href="../../index.html" class="nav-back-link">
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span>Về trang chủ</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="../../index.html">Trang chủ</a>
+            <span>/</span>
+            <strong>Hình Thoi</strong>
+        </nav>
+
         <h1>Hình Thoi</h1>
+        <p class="page-desc">Hình bình hành có 4 cạnh bằng nhau. Hai đường chéo vuông góc với nhau tại trung điểm của mỗi đường.</p>
 
         <div class="calc-layout">
+            <!-- Left Column: Visual & Formula -->
             <div class="calc-col-left">
                 <div class="svg-wrap">
             <svg id="rhombusSvg" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg">
@@ -74,9 +97,8 @@
                 <text id="svgLabelAlpha" x="52" y="113" text-anchor="middle" font-size="12" font-weight="700" fill="#b7791f">α</text>
             </svg>
         </div>
-
-        <div class="formula-box">
-            <h2>📐 Công thức</h2>
+                <div class="formula-box">
+            <h2><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Công Thức Tính</h2>
             <ul>
                 <li>Chu vi: \(C = 4a\)</li>
                 <li>Diện tích (theo 2 đường chéo): \(S = \dfrac{d_1 \cdot d_2}{2}\)</li>
@@ -84,42 +106,54 @@
                 <li>Bán kính đường tròn nội tiếp: \(r = \dfrac{d_1 \cdot d_2}{4a}\)</li>
             </ul>
         </div>
+                <div class="quick-info-box">
+                    <strong>Ghi chú:</strong> Nhập đầy đủ các thông số ở cột bên phải rồi nhấn Tính toán để hiển thị các bước giải chi tiết.
+                </div>
             </div>
+
+            <!-- Right Column: Input Form & Result -->
             <div class="calc-col-right">
-                <div id="clientErrorBox" style="display:none; color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;"></div>
-        <form class="calc-form" onsubmit="calculate(); return false;">
-            <div class="form-row">
+                <div id="clientErrorBox" style="display:none; color: var(--color-error-text); padding: 12px; background: var(--color-error-bg); border-radius: var(--radius-sm); border: 1px solid var(--color-error-border);"></div>
+
+                <form class="calc-form" onsubmit="calculate(); return false;">
+                    <div class="form-row">
                 <label>Cạnh (a):</label>
                 <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Cạnh a">
             </div>
-            <div class="form-row">
+<div class="form-row">
                 <label>Đường chéo d₁:</label>
                 <input type="number" id="inputD1" step="any" name="d1" required value="${param.d1}" placeholder="Đường chéo d1">
             </div>
-            <div class="form-row">
+<div class="form-row">
                 <label>Đường chéo d₂:</label>
                 <input type="number" id="inputD2" step="any" name="d2" required value="${param.d2}" placeholder="Đường chéo d2">
             </div>
-            <div class="form-row">
+<div class="form-row">
                 <label>Góc α (độ):</label>
                 <input type="number" id="inputAlpha" step="any" name="alpha" required value="${param.alpha}" placeholder="Góc alpha (độ)">
             </div>
-            <div class="form-actions">
-                <button type="submit" class="btn-calc">Tính toán</button>
-                <button type="reset" class="btn-reset" onclick="window.location.href=window.location.pathname">Làm mới</button>
-            </div>
-        </form>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-calc">Tính toán</button>
+                        <button type="reset" class="btn-reset" onclick="window.location.reload()">Làm mới</button>
+                    </div>
+                </form>
 
-        
-        <div id="clientResultBox" class="result-box" style="display:none;">
-            <h2>📊 Kết quả & Các bước giải chi tiết</h2>
-            <div id="clientSteps"></div>
-        </div>
-    
-                <a href="../../index.html" class="btn-home">Về trang chủ</a>
+                <div id="clientResultBox" class="result-box" style="display:none;">
+                    <h2>Kết Quả & Các Bước Giải Chi Tiết</h2>
+                    <div id="clientSteps"></div>
+                </div>
+
+                <a href="../../index.html" class="btn-home-bottom">
+                    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    <span>Quay lại trang chủ</span>
+                </a>
             </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="app-footer">
+        © 2026 Tính Toán Hình Học. Hệ thống công cụ học tập và ôn luyện hình học trực quan.
+    </footer>
 
     <script>
         function updateSvgShape() {
@@ -190,13 +224,14 @@
         document.getElementById('inputD2').addEventListener('input', updateSvgShape);
         document.getElementById('inputAlpha').addEventListener('input', updateSvgShape);
     </script>
-
     
     <script>
         function showError(msg) {
             var errBox = document.getElementById('clientErrorBox');
-            errBox.style.display = 'block';
-            errBox.innerHTML = '<strong>Lỗi:</strong> ' + msg;
+            if (errBox) {
+                errBox.style.display = 'block';
+                errBox.innerHTML = '<strong>Lỗi:</strong> ' + msg;
+            }
             var resBox = document.getElementById('clientResultBox');
             if (resBox) resBox.style.display = 'none';
         }
@@ -212,14 +247,18 @@
             steps.forEach(function(s) {
                 var div = document.createElement('div');
                 div.className = 'step-detail';
-                div.innerHTML = '<p><strong>' + s.t + '</strong></p>' +
-                                '<p>\(' + s.m + '\) <strong>' + s.v + '</strong> <span class="unit-badge">' + s.u + '</span></p>';
+                div.innerHTML = '<p style="font-weight:600; margin-bottom: 4px;">' + s.t + '</p>' +
+                                '<p>\\(' + s.m + '\\) <strong>' + s.v + '</strong> <span class="unit-text">' + s.u + '</span></p>';
                 stepsContainer.appendChild(div);
             });
 
             resBox.style.display = 'block';
+            
+            // Re-render MathJax properly
             if (window.MathJax && window.MathJax.typesetPromise) {
-                MathJax.typesetPromise([resBox]);
+                MathJax.typesetPromise([stepsContainer]).catch(function(err) {
+                    console.error('MathJax error:', err);
+                });
             }
         }
     </script>
@@ -234,12 +273,11 @@
             var p = 4 * a;
             var s = 0.5 * d1 * d2;
             showResult([
-                { t: "1. Chu vi (C):", m: "C = 4a = 4 \times " + a + " = ", v: p.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" },
-                { t: "2. Diện tích (S):", m: "S = \dfrac{1}{2}d_1 d_2 = \dfrac{1}{2} \times " + d1 + " \times " + d2 + " = ", v: s.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị diện tích" }
+                { t: "1. Chu vi (C):", m: "C = 4a = 4 \\times " + a + " = ", v: p.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị dài" },
+                { t: "2. Diện tích (S):", m: "S = \\dfrac{1}{2}d_1 d_2 = \\dfrac{1}{2} \\times " + d1 + " \\times " + d2 + " = ", v: s.toFixed(4).replace(/\.?0+$/, ''), u: "đơn vị diện tích" }
             ]);
         }
-    
+        
     </script>
 </body>
-
 </html>
