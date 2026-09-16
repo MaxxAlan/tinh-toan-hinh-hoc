@@ -4,7 +4,31 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Hình Bình Hành</title>
+    <!-- Primary Meta Tags -->
+    <title>Hình Bình Hành - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Hình Bình Hành - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Tính chu vi, diện tích và đường chéo hình bình hành nhanh chóng, chính xác.">
+    <meta name="author" content="MaxxAlan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2b6cb0">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-binh-hanh">
+    <meta property="og:title" content="Hình Bình Hành - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Tính chu vi, diện tích và đường chéo hình bình hành nhanh chóng, chính xác.">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-binh-hanh">
+    <meta property="twitter:title" content="Hình Bình Hành - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Tính chu vi, diện tích và đường chéo hình bình hành nhanh chóng, chính xác.">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <script>

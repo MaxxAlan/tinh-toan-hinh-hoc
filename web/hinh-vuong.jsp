@@ -4,7 +4,31 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Hình Vuông</title>
+    <!-- Primary Meta Tags -->
+    <title>Hình Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Hình Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Tính diện tích, chu vi, đường chéo và bán kính ngoại tiếp hình vuông với công thức và các bước giải chi tiết.">
+    <meta name="author" content="MaxxAlan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2b6cb0">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-vuong">
+    <meta property="og:title" content="Hình Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Tính diện tích, chu vi, đường chéo và bán kính ngoại tiếp hình vuông với công thức và các bước giải chi tiết.">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-vuong">
+    <meta property="twitter:title" content="Hình Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Tính diện tích, chu vi, đường chéo và bán kính ngoại tiếp hình vuông với công thức và các bước giải chi tiết.">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <script>

@@ -4,7 +4,31 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Hộp Chữ Nhật</title>
+    <!-- Primary Meta Tags -->
+    <title>Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Tính thể tích, diện tích xung quanh, diện tích toàn phần và đường chéo hình hộp chữ nhật.">
+    <meta name="author" content="MaxxAlan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2b6cb0">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hop-chu-nhat">
+    <meta property="og:title" content="Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Tính thể tích, diện tích xung quanh, diện tích toàn phần và đường chéo hình hộp chữ nhật.">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hop-chu-nhat">
+    <meta property="twitter:title" content="Hình Hộp Chữ Nhật - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Tính thể tích, diện tích xung quanh, diện tích toàn phần và đường chéo hình hộp chữ nhật.">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <script>

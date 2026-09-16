@@ -4,7 +4,31 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Tam Giác Vuông</title>
+    <!-- Primary Meta Tags -->
+    <title>Tam Giác Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Tam Giác Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Định lý Pythagore, tính cạnh huyền, chiều cao ứng với cạnh huyền, diện tích và chu vi tam giác vuông.">
+    <meta name="author" content="MaxxAlan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2b6cb0">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/tam-giac-vuong">
+    <meta property="og:title" content="Tam Giác Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Định lý Pythagore, tính cạnh huyền, chiều cao ứng với cạnh huyền, diện tích và chu vi tam giác vuông.">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/tam-giac-vuong">
+    <meta property="twitter:title" content="Tam Giác Vuông - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Định lý Pythagore, tính cạnh huyền, chiều cao ứng với cạnh huyền, diện tích và chu vi tam giác vuông.">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <script>
