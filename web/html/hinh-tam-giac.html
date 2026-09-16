@@ -35,6 +35,13 @@
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    <script>
+        // Clean URL handler: Tự động loại bỏ phần mở rộng .html trên thanh địa chỉ URL
+        if (window.location.protocol.startsWith('http') && window.location.pathname.endsWith('.html')) {
+            var cleanUrl = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+            window.history.replaceState(null, '', cleanUrl + window.location.search + window.location.hash);
+        }
+    </script>
 </head>
 <body>
     <!-- App Header -->

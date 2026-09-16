@@ -36,6 +36,13 @@
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    <script>
+        // Clean URL handler: Tự động loại bỏ phần mở rộng .html trên thanh địa chỉ URL
+        if (window.location.protocol.startsWith('http') && window.location.pathname.endsWith('.html')) {
+            var cleanUrl = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+            window.history.replaceState(null, '', cleanUrl + window.location.search + window.location.hash);
+        }
+    </script>
 </head>
 <body>
     <!-- App Header & Brand -->
@@ -64,15 +71,15 @@
                     Hình Phẳng (2D)
                 </h2>
                 <ul class="shape-list">
-                    <li><a href="web/html/hinh-vuong.html">Hình Vuông</a></li>
-                    <li><a href="web/html/hinh-chu-nhat.html">Hình Chữ Nhật</a></li>
-                    <li><a href="web/html/hinh-tron.html">Hình Tròn</a></li>
-                    <li><a href="web/html/hinh-tam-giac.html">Tam Giác</a></li>
-                    <li><a href="web/html/tam-giac-deu.html">Tam Giác Đều</a></li>
-                    <li><a href="web/html/tam-giac-vuong.html">Tam Giác Vuông</a></li>
-                    <li><a href="web/html/hinh-thang.html">Hình Thang</a></li>
-                    <li><a href="web/html/hinh-binh-hanh.html">Hình Bình Hành</a></li>
-                    <li><a href="web/html/hinh-thoi.html">Hình Thoi</a></li>
+                    <li><a href="hinh-vuong/">Hình Vuông</a></li>
+                    <li><a href="hinh-chu-nhat/">Hình Chữ Nhật</a></li>
+                    <li><a href="hinh-tron/">Hình Tròn</a></li>
+                    <li><a href="hinh-tam-giac/">Tam Giác</a></li>
+                    <li><a href="tam-giac-deu/">Tam Giác Đều</a></li>
+                    <li><a href="tam-giac-vuong/">Tam Giác Vuông</a></li>
+                    <li><a href="hinh-thang/">Hình Thang</a></li>
+                    <li><a href="hinh-binh-hanh/">Hình Bình Hành</a></li>
+                    <li><a href="hinh-thoi/">Hình Thoi</a></li>
                 </ul>
             </section>
 
@@ -83,16 +90,16 @@
                     Hình Không Gian (3D)
                 </h2>
                 <ul class="shape-list">
-                    <li><a href="web/html/hop-chu-nhat.html">Hộp Chữ Nhật</a></li>
-                    <li><a href="web/html/hinh-lap-phuong.html">Lập Phương</a></li>
-                    <li><a href="web/html/lang-tru.html">Lăng Trụ</a></li>
-                    <li><a href="web/html/hinh-chop.html">Hình Chóp</a></li>
-                    <li><a href="web/html/hinh-chop-cut.html">Chóp Cụt</a></li>
-                    <li><a href="web/html/hinh-tru.html">Hình Trụ</a></li>
-                    <li><a href="web/html/hinh-non.html">Hình Nón</a></li>
-                    <li><a href="web/html/hinh-non-cut.html">Nón Cụt</a></li>
-                    <li><a href="web/html/hinh-cau.html">Hình Cầu</a></li>
-                    <li><a href="web/html/tu-dien-deu.html">Tứ Diện Đều</a></li>
+                    <li><a href="hop-chu-nhat/">Hộp Chữ Nhật</a></li>
+                    <li><a href="hinh-lap-phuong/">Lập Phương</a></li>
+                    <li><a href="lang-tru/">Lăng Trụ</a></li>
+                    <li><a href="hinh-chop/">Hình Chóp</a></li>
+                    <li><a href="hinh-chop-cut/">Chóp Cụt</a></li>
+                    <li><a href="hinh-tru/">Hình Trụ</a></li>
+                    <li><a href="hinh-non/">Hình Nón</a></li>
+                    <li><a href="hinh-non-cut/">Nón Cụt</a></li>
+                    <li><a href="hinh-cau/">Hình Cầu</a></li>
+                    <li><a href="tu-dien-deu/">Tứ Diện Đều</a></li>
                 </ul>
             </section>
         </div>
