@@ -39,7 +39,7 @@ public class CircleController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hinh-tron.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hinh-tron.jsp").forward(request, response);
      }
 
     /**
@@ -61,17 +61,17 @@ public class CircleController extends HttpServlet {
             double radius = Double.parseDouble(r);
             if (radius <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hinh-tron.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hinh-tron.jsp").forward(request, response);
                 return;
             }
             //b2, tao model de xu ly du lieu, dua tren parameter da nhan tu b1
             Circle x = new Circle(radius);
             request.setAttribute("ht", x);
             //b3, chuyen toi: View, tuong ung cho trc: requestDispatcher
-            request.getRequestDispatcher("hinh-tron.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-tron.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hinh-tron.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-tron.jsp").forward(request, response);
         }
     }
 

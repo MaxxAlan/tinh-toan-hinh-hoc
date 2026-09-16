@@ -43,7 +43,7 @@ public class RectangleController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hinh-chu-nhat.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hinh-chu-nhat.jsp").forward(request, response);
     }
 
     /**
@@ -66,17 +66,17 @@ public class RectangleController extends HttpServlet {
             double longLength = Double.parseDouble(l);
             if (shortLength <= 0 || longLength <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hinh-chu-nhat.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hinh-chu-nhat.jsp").forward(request, response);
                 return;
             }
             //b2
             Rectangle x = new Rectangle(shortLength, longLength);
             request.setAttribute("hcn", x);
             //b3
-            request.getRequestDispatcher("hinh-chu-nhat.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-chu-nhat.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hinh-chu-nhat.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-chu-nhat.jsp").forward(request, response);
         }
     }
 

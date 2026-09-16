@@ -7,19 +7,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Primary Meta Tags -->
-    <title>Hình Lăng Trụ Đứng - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
-    <meta name="title" content="Hình Lăng Trụ Đứng - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta name="description" content="Tính thể tích và diện tích hình lăng trụ đứng từ diện tích đáy và chiều cao.">
+    <title>Hình Chóp - Công Thức, Tính Toán & Lời Giải Chi Tiết</title>
+    <meta name="title" content="Hình Chóp - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta name="description" content="Tính thể tích hình chóp V = 1/3 S.h và diện tích xung quanh các khối chóp đa giác.">
     <meta name="author" content="MaxxAlan">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2b6cb0">
 
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/lang-tru">
-    <meta property="og:title" content="Hình Lăng Trụ Đứng - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta property="og:description" content="Tính thể tích và diện tích hình lăng trụ đứng từ diện tích đáy và chiều cao.">
-    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-chop">
+    <meta property="og:title" content="Hình Chóp - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="og:description" content="Tính thể tích hình chóp V = 1/3 S.h và diện tích xung quanh các khối chóp đa giác.">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
@@ -27,11 +27,11 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/lang-tru">
-    <meta property="twitter:title" content="Hình Lăng Trụ Đứng - Công Thức, Tính Toán & Lời Giải Chi Tiết">
-    <meta property="twitter:description" content="Tính thể tích và diện tích hình lăng trụ đứng từ diện tích đáy và chiều cao.">
-    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/hinh-chop">
+    <meta property="twitter:title" content="Hình Chóp - Công Thức, Tính Toán & Lời Giải Chi Tiết">
+    <meta property="twitter:description" content="Tính thể tích hình chóp V = 1/3 S.h và diện tích xung quanh các khối chóp đa giác.">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
+    <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
@@ -56,27 +56,27 @@
     </header>
 
     <div class="container">
-        <h1>Lăng Trụ</h1>
+        <h1>Hình Chóp</h1>
 
         <div class="calc-layout">
             <div class="calc-col-left">
                 <div class="svg-wrap">
             <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="45,170 175,170 145,135" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
-                <polygon points="45,65 175,65 145,30" fill="#dbeafe" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="45" y1="65" x2="45" y2="170" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="175" y1="65" x2="175" y2="170" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="145" y1="30" x2="145" y2="135" stroke="#2b6cb0" stroke-width="2"/>
-                <line x1="185" y1="65" x2="185" y2="170" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="5,3"/>
-                <text id="svgLabelH" x="192" y="120" font-size="11" font-weight="600" fill="#e53e3e">h</text>
-                <text id="svgLabelB" x="110" y="58" font-size="11" font-weight="600" fill="#2b6cb0">B (đáy)</text>
+                <polygon points="35,180 185,180 155,140" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+                <line x1="110" y1="35" x2="35" y2="180" stroke="#2b6cb0" stroke-width="2"/>
+                <line x1="110" y1="35" x2="185" y2="180" stroke="#2b6cb0" stroke-width="2"/>
+                <line x1="110" y1="35" x2="155" y2="140" stroke="#2b6cb0" stroke-width="2"/>
+                <line x1="110" y1="35" x2="110" y2="165" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="110" y="28" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">S</text>
+                <text id="svgLabelH" x="115" y="105" font-size="11" font-weight="600" fill="#e53e3e">h</text>
+                <text id="svgLabelB" x="110" y="195" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">B (đáy)</text>
             </svg>
         </div>
 
         <div class="formula-box">
             <h2>Công thức</h2>
             <ul>
-                <li>Thể tích: \(V = B \cdot h\)</li>
+                <li>Thể tích: \(V = \dfrac{1}{3}\cdot B \cdot h\)</li>
                 <li>(B = diện tích đáy, h = chiều cao)</li>
             </ul>
         </div>
@@ -87,7 +87,7 @@
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
         <% } %>
-        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/lang-tru">
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/hinh-chop">
             <div class="form-row">
                 <label>Diện tích đáy (B):</label>
                 <input type="number" id="inputB" step="any" name="baseArea" required value="${param.baseArea}" placeholder="Diện tích đáy B">
@@ -102,12 +102,12 @@
             </div>
         </form>
 
-        <% if (request.getAttribute("langtru") != null) { %>
+        <% if (request.getAttribute("chop") != null) { %>
         <div class="result-box">
             <h2>Kết quả & Các bước giải chi tiết</h2>
             <div class="step-detail">
                 <p><strong>1. Thể tích (V):</strong></p>
-                <p>\(V = B \times h = ${param.baseArea} \times ${param.h} = \) <strong><fmt:formatNumber value="${requestScope.langtru.getVolume()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị thể tích</span></p>
+                <p>\(V = \dfrac{1}{3} \times B \times h = \dfrac{1}{3} \times ${param.baseArea} \times ${param.h} = \) <strong><fmt:formatNumber value="${requestScope.chop.getVolume()}" pattern="#,##0.####"/></strong> <span class="unit-text">đơn vị thể tích</span></p>
             </div>
         </div>
         <% } %>

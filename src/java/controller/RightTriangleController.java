@@ -12,7 +12,7 @@ public class RightTriangleController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("tam-giac-vuong.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/tam-giac-vuong.jsp").forward(request, response);
     }
 
     @Override
@@ -24,15 +24,15 @@ public class RightTriangleController extends HttpServlet {
             double c2 = Double.parseDouble(request.getParameter("c2"));
             if (c1 <= 0 || c2 <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("tam-giac-vuong.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/tam-giac-vuong.jsp").forward(request, response);
                 return;
             }
             RightTriangle x = new RightTriangle(c1, c2);
             request.setAttribute("tgv", x);
-            request.getRequestDispatcher("tam-giac-vuong.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/tam-giac-vuong.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("tam-giac-vuong.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/tam-giac-vuong.jsp").forward(request, response);
         }
     }
 }

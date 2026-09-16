@@ -11,6 +11,7 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect(request.getContextPath() + "/tinh-toan-hinh-hoc.html");
+        // Forward trực tiếp sang trang chủ index.html
+        request.getRequestDispatcher("/index.html").forward(request, response);
     }
 }

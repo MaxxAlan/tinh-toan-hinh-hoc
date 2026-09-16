@@ -12,7 +12,7 @@ public class RhombusController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hinh-thoi.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hinh-thoi.jsp").forward(request, response);
     }
 
     @Override
@@ -26,15 +26,15 @@ public class RhombusController extends HttpServlet {
             double alpha = Double.parseDouble(request.getParameter("alpha"));
             if (a <= 0 || d1 <= 0 || d2 <= 0 || alpha <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hinh-thoi.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hinh-thoi.jsp").forward(request, response);
                 return;
             }
             Rhombus x = new Rhombus(a, d1, d2, alpha);
             request.setAttribute("hthi", x);
-            request.getRequestDispatcher("hinh-thoi.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-thoi.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hinh-thoi.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-thoi.jsp").forward(request, response);
         }
     }
 }

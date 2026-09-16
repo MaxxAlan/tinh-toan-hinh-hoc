@@ -12,7 +12,7 @@ public class TriangleController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hinh-tam-giac.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hinh-tam-giac.jsp").forward(request, response);
     }
 
     @Override
@@ -26,15 +26,15 @@ public class TriangleController extends HttpServlet {
             double h = Double.parseDouble(request.getParameter("h"));
             if (a <= 0 || b <= 0 || c <= 0 || h <= 0 || (a+b<=c) || (a+c<=b) || (b+c<=a)) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hinh-tam-giac.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hinh-tam-giac.jsp").forward(request, response);
                 return;
             }
             Triangle x = new Triangle(a, b, c, h);
             request.setAttribute("tg", x);
-            request.getRequestDispatcher("hinh-tam-giac.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-tam-giac.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hinh-tam-giac.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-tam-giac.jsp").forward(request, response);
         }
     }
 }

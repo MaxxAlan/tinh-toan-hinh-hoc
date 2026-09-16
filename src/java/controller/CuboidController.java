@@ -12,7 +12,7 @@ public class CuboidController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hop-chu-nhat.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hop-chu-nhat.jsp").forward(request, response);
     }
 
     @Override
@@ -25,15 +25,15 @@ public class CuboidController extends HttpServlet {
             double c = Double.parseDouble(request.getParameter("c"));
             if (a <= 0 || b <= 0 || c <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hop-chu-nhat.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hop-chu-nhat.jsp").forward(request, response);
                 return;
             }
             Cuboid x = new Cuboid(a, b, c);
             request.setAttribute("hcn3d", x);
-            request.getRequestDispatcher("hop-chu-nhat.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hop-chu-nhat.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hop-chu-nhat.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hop-chu-nhat.jsp").forward(request, response);
         }
     }
 }

@@ -12,7 +12,7 @@ public class TruncatedConeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hinh-non-cut.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hinh-non-cut.jsp").forward(request, response);
     }
 
     @Override
@@ -25,15 +25,15 @@ public class TruncatedConeController extends HttpServlet {
             double h = Double.parseDouble(request.getParameter("h"));
             if (r <= 0 || rp <= 0 || h <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hinh-non-cut.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hinh-non-cut.jsp").forward(request, response);
                 return;
             }
             TruncatedCone x = new TruncatedCone(r, rp, h);
             request.setAttribute("noncut", x);
-            request.getRequestDispatcher("hinh-non-cut.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-non-cut.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hinh-non-cut.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-non-cut.jsp").forward(request, response);
         }
     }
 }

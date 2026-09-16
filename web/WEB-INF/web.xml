@@ -207,7 +207,7 @@
     </session-config>
 
     <welcome-file-list>
-        <welcome-file>tinh-toan-hinh-hoc.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
     <jsp-config>

@@ -12,7 +12,7 @@ public class TrapezoidController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hinh-thang.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hinh-thang.jsp").forward(request, response);
     }
 
     @Override
@@ -25,15 +25,15 @@ public class TrapezoidController extends HttpServlet {
             double h = Double.parseDouble(request.getParameter("h"));
             if (a <= 0 || b <= 0 || h <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hinh-thang.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hinh-thang.jsp").forward(request, response);
                 return;
             }
             Trapezoid x = new Trapezoid(a, b, h);
             request.setAttribute("thang", x);
-            request.getRequestDispatcher("hinh-thang.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-thang.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hinh-thang.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-thang.jsp").forward(request, response);
         }
     }
 }

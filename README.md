@@ -50,9 +50,20 @@ Repository: [https://github.com/MaxxAlan/tinh-toan-hinh-hoc](https://github.com/
    ```
 4. Khởi động Tomcat và truy cập trình duyệt:
    ```
-   http://localhost:8080/hocJSP/tinh-toan-hinh-hoc
+   http://localhost:8080/hocJSP/
    ```
-   *(Trang chủ chào đón: `tinh-toan-hinh-hoc.html` hoặc Clean URL `/tinh-toan-hinh-hoc`)*
+   *(Trang chủ chào đón: `index.html` hoặc Clean URL `/tinh-toan-hinh-hoc`)*
+
+---
+
+## 📁 Cấu trúc Thư mục Dự án
+- `web/assets/`: Chứa `favicon.svg` và `og-image.jpg` đồ họa chuẩn Open Graph / SEO.
+- `web/jsp/`: Chứa toàn bộ 19 template JSP cho các hình 2D và 3D.
+- `web/html/`: Chứa các trang HTML tĩnh độc lập cho từng hình.
+- `web/css/`: Bảng kiểu `style.css` thiết kế hiện đại, responsive.
+- `web/index.html`: Trang chủ điều hướng trung tâm Clean URLs.
+- `src/java/controller/`: Các Servlet tiếp nhận và xử lý Clean URLs, điều hướng tới `web/jsp/`.
+- `src/java/model/`: Các mô hình toán học tính toán chi tiết từng hình.
 
 ---
 

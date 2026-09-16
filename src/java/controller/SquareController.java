@@ -12,7 +12,7 @@ public class SquareController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hinh-vuong.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hinh-vuong.jsp").forward(request, response);
     }
 
     @Override
@@ -23,15 +23,15 @@ public class SquareController extends HttpServlet {
             double side = Double.parseDouble(request.getParameter("a"));
             if (side <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hinh-vuong.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hinh-vuong.jsp").forward(request, response);
                 return;
             }
             Square x = new Square(side);
             request.setAttribute("hv", x);
-            request.getRequestDispatcher("hinh-vuong.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-vuong.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hinh-vuong.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-vuong.jsp").forward(request, response);
         }
     }
 }

@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/tu-dien-deu">
     <meta property="og:title" content="Tứ Diện Đều - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta property="og:description" content="Công thức tính nhanh thể tích, chiều cao, diện tích toàn phần của khối tứ diện đều cạnh a ôn thi THPT.">
-    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
+    <meta property="og:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
@@ -30,8 +30,8 @@
     <meta property="twitter:url" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/tu-dien-deu">
     <meta property="twitter:title" content="Tứ Diện Đều - Công Thức, Tính Toán & Lời Giải Chi Tiết">
     <meta property="twitter:description" content="Công thức tính nhanh thể tích, chiều cao, diện tích toàn phần của khối tứ diện đều cạnh a ôn thi THPT.">
-    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/og-image.jpg">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
+    <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };

@@ -12,7 +12,7 @@ public class SphereController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("hinh-cau.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/hinh-cau.jsp").forward(request, response);
     }
 
     @Override
@@ -23,15 +23,15 @@ public class SphereController extends HttpServlet {
             double r = Double.parseDouble(request.getParameter("r"));
             if (r <= 0) {
                 request.setAttribute("error", "Vui lòng nhập các kích thước lớn hơn 0 và hợp lệ.");
-                request.getRequestDispatcher("hinh-cau.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/hinh-cau.jsp").forward(request, response);
                 return;
             }
             Sphere x = new Sphere(r);
             request.setAttribute("cau", x);
-            request.getRequestDispatcher("hinh-cau.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-cau.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ.");
-            request.getRequestDispatcher("hinh-cau.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/hinh-cau.jsp").forward(request, response);
         }
     }
 }
