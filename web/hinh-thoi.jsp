@@ -62,7 +62,7 @@
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
         <% } %>
-        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/RhombusController">
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/hinh-thoi">
             <div class="form-row">
                 <label>Cạnh (a):</label>
                 <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Cạnh a">
@@ -107,7 +107,7 @@
         </div>
         <% } %>
 
-        <a href="tinh-toan-hinh-hoc.html" class="btn-home">🏠 Về trang chủ</a>
+        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
     </div>
 
     <script>

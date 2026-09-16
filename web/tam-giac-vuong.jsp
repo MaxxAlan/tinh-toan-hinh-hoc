@@ -43,7 +43,7 @@
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
         <% } %>
-        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/RightTriangleController">
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/tam-giac-vuong">
             <div class="form-row">
                 <label>Cạnh góc vuông 1 (a):</label>
                 <input type="number" id="inputC1" step="any" name="c1" required value="${param.c1}" placeholder="Cạnh a">
@@ -88,7 +88,7 @@
         </div>
         <% } %>
 
-        <a href="tinh-toan-hinh-hoc.html" class="btn-home">🏠 Về trang chủ</a>
+        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
     </div>
 
     <script>

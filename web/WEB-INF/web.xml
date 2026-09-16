@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <!-- === Home Clean URL === -->
+    <servlet>
+        <servlet-name>TinhToanHinhHoc</servlet-name>
+        <jsp-file>/tinh-toan-hinh-hoc.html</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TinhToanHinhHoc</servlet-name>
+        <url-pattern>/tinh-toan-hinh-hoc</url-pattern>
+    </servlet-mapping>
     <!-- === Existing === -->
     <servlet>
         <servlet-name>CircleController</servlet-name>
@@ -85,78 +95,97 @@
     <!-- === Mappings === -->
     <servlet-mapping>
         <servlet-name>CircleController</servlet-name>
+        <url-pattern>/hinh-tron</url-pattern>
         <url-pattern>/CircleController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RectangleController</servlet-name>
+        <url-pattern>/hinh-chu-nhat</url-pattern>
         <url-pattern>/RectangleController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SquareController</servlet-name>
+        <url-pattern>/hinh-vuong</url-pattern>
         <url-pattern>/SquareController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TriangleController</servlet-name>
+        <url-pattern>/hinh-tam-giac</url-pattern>
         <url-pattern>/TriangleController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EquilateralTriangleController</servlet-name>
+        <url-pattern>/tam-giac-deu</url-pattern>
         <url-pattern>/EquilateralTriangleController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RightTriangleController</servlet-name>
+        <url-pattern>/tam-giac-vuong</url-pattern>
         <url-pattern>/RightTriangleController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TrapezoidController</servlet-name>
+        <url-pattern>/hinh-thang</url-pattern>
         <url-pattern>/TrapezoidController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ParallelogramController</servlet-name>
+        <url-pattern>/hinh-binh-hanh</url-pattern>
         <url-pattern>/ParallelogramController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RhombusController</servlet-name>
+        <url-pattern>/hinh-thoi</url-pattern>
         <url-pattern>/RhombusController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CuboidController</servlet-name>
+        <url-pattern>/hop-chu-nhat</url-pattern>
         <url-pattern>/CuboidController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CubeController</servlet-name>
+        <url-pattern>/hinh-lap-phuong</url-pattern>
         <url-pattern>/CubeController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PrismController</servlet-name>
+        <url-pattern>/lang-tru</url-pattern>
         <url-pattern>/PrismController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PyramidController</servlet-name>
+        <url-pattern>/hinh-chop</url-pattern>
         <url-pattern>/PyramidController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TruncatedPyramidController</servlet-name>
+        <url-pattern>/hinh-chop-cut</url-pattern>
         <url-pattern>/TruncatedPyramidController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CylinderController</servlet-name>
+        <url-pattern>/hinh-tru</url-pattern>
         <url-pattern>/CylinderController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ConeController</servlet-name>
+        <url-pattern>/hinh-non</url-pattern>
         <url-pattern>/ConeController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TruncatedConeController</servlet-name>
+        <url-pattern>/hinh-non-cut</url-pattern>
         <url-pattern>/TruncatedConeController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SphereController</servlet-name>
+        <url-pattern>/hinh-cau</url-pattern>
         <url-pattern>/SphereController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegularTetrahedronController</servlet-name>
+        <url-pattern>/tu-dien-deu</url-pattern>
         <url-pattern>/RegularTetrahedronController</url-pattern>
     </servlet-mapping>
 

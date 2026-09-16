@@ -42,7 +42,7 @@
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
         <% } %>
-        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/PrismController">
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/lang-tru">
             <div class="form-row">
                 <label>Diện tích đáy (B):</label>
                 <input type="number" id="inputB" step="any" name="baseArea" required value="${param.baseArea}" placeholder="Diện tích đáy B">
@@ -67,7 +67,7 @@
         </div>
         <% } %>
 
-        <a href="tinh-toan-hinh-hoc.html" class="btn-home">🏠 Về trang chủ</a>
+        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
     </div>
 
     <script>

@@ -42,7 +42,7 @@
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
         <% } %>
-        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/SquareController">
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/hinh-vuong">
             <div class="form-row">
                 <label>Cạnh (a):</label>
                 <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Nhập cạnh a">
@@ -79,7 +79,7 @@
         </div>
         <% } %>
 
-        <a href="tinh-toan-hinh-hoc.html" class="btn-home">🏠 Về trang chủ</a>
+        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
     </div>
 
     <script>

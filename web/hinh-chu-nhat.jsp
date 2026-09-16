@@ -40,7 +40,7 @@
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
         <% } %>
-        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/RectangleController">
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/hinh-chu-nhat">
             <div class="form-row">
                 <label>Chiều dài (a):</label>
                 <input type="number" id="inputA" step="any" name="s" required value="${param.s}" placeholder="Nhập chiều dài a">
@@ -77,7 +77,7 @@
         </div>
         <% } %>
 
-        <a href="tinh-toan-hinh-hoc.html" class="btn-home">🏠 Về trang chủ</a>
+        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
     </div>
 
     <!-- Script điều chỉnh SVG co giãn tương tác theo tỷ lệ a và b -->

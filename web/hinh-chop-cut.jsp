@@ -43,7 +43,7 @@
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
         <% } %>
-        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/TruncatedPyramidController">
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/hinh-chop-cut">
             <div class="form-row">
                 <label>Diện tích đáy lớn (S):</label>
                 <input type="number" id="inputS" step="any" name="s" required value="${param.s}" placeholder="Diện tích đáy lớn S">
@@ -72,7 +72,7 @@
         </div>
         <% } %>
 
-        <a href="tinh-toan-hinh-hoc.html" class="btn-home">🏠 Về trang chủ</a>
+        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
     </div>
 
     <script>

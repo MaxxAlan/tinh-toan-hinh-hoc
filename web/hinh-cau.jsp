@@ -39,7 +39,7 @@
                 <strong>Lỗi:</strong> ${requestScope.error}
             </div>
         <% } %>
-        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/SphereController">
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/hinh-cau">
             <div class="form-row">
                 <label>Bán kính (R):</label>
                 <input type="number" id="inputR" step="any" name="r" required value="${param.r}" placeholder="Bán kính R">
@@ -64,7 +64,7 @@
         </div>
         <% } %>
 
-        <a href="tinh-toan-hinh-hoc.html" class="btn-home">🏠 Về trang chủ</a>
+        <a href="tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
     </div>
 
     <script>
