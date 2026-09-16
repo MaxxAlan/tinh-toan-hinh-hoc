@@ -1,5 +1,6 @@
-<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+    <meta property="og:site_name" content="Tính Toán Hình Học">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -32,7 +33,7 @@
     <meta property="twitter:description" content="Tính thể tích khối cầu và diện tích mặt cầu bán kính R chuẩn xác từng bước.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=3">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -58,7 +59,7 @@
     <div class="container">
         <h1>Hình Cầu</h1>
 
-        <div class="calc-layout">
+        <div class="calc-grid">
             <div class="calc-col-left">
                 <div class="svg-wrap">
             <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
@@ -70,13 +71,27 @@
             </svg>
         </div>
 
-        <div class="formula-box">
-            <h2>Công thức</h2>
-            <ul>
-                <li>Thể tích: \(V = \dfrac{4}{3}\pi R^3\)</li>
-                <li>Diện tích mặt cầu: \(S = 4\pi R^2\)</li>
-            </ul>
-        </div>
+                <div class="formula-box">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-v" data-inputs="r">
+                            Thể tích: <span class="var-token" data-var="V">V</span> = (4/3)π<span class="var-token" data-var="r">R</span>³
+                        </li>
+                        <li id="fm-s" data-inputs="r">
+                            Diện tích mặt cầu: <span class="var-token" data-var="S">S</span> = 4π<span class="var-token" data-var="r">R</span>²
+                        </li>
+                        <li id="fm-d" data-inputs="r">
+                            Đường kính: <span class="var-token" data-var="d">d</span> = 2<span class="var-token" data-var="r">R</span>
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
             </div>
             <div class="calc-col-right">
                 <% if (request.getAttribute("error") != null) { %>
@@ -114,12 +129,26 @@
     </div>
 
     <script>
+        function watchFormulas() {
+            var inR = parseFloat(document.getElementById('inputR').value);
+            var hasR = !isNaN(inR) && inR > 0;
+            document.querySelectorAll('.var-token').forEach(function(el) { el.classList.remove('var-known','var-target'); });
+            document.querySelectorAll('.formula-box li').forEach(function(el) { el.classList.remove('formula-ready'); });
+            if (hasR) {
+                document.querySelectorAll('.var-token[data-var="r"]').forEach(function(el) { el.classList.add('var-known'); });
+                ['fm-v','fm-s','fm-d'].forEach(function(id) { document.getElementById(id).classList.add('formula-ready'); });
+                ['V','S','d'].forEach(function(v) {
+                    document.querySelectorAll('.var-token[data-var="'+v+'"]').forEach(function(el) { el.classList.add('var-target'); });
+                });
+            }
+        }
         function updateSvgShape() {
             var inR = parseFloat(document.getElementById('inputR').value);
             document.getElementById('svgLabelR').textContent = (!isNaN(inR) && inR > 0) ? ('R = ' + inR) : 'R';
         }
-        window.addEventListener('DOMContentLoaded', updateSvgShape);
-        document.getElementById('inputR').addEventListener('input', updateSvgShape);
+        function handleAll() { watchFormulas(); updateSvgShape(); }
+        window.addEventListener('DOMContentLoaded', handleAll);
+        document.getElementById('inputR').addEventListener('input', handleAll);
     </script>
 
     <footer class="app-footer">

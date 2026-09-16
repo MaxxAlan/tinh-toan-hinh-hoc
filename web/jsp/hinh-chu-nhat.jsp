@@ -1,5 +1,6 @@
-<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+    <meta property="og:site_name" content="Tính Toán Hình Học">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -32,7 +33,7 @@
     <meta property="twitter:description" content="Tính chu vi, diện tích, đường chéo hình chữ nhật kèm mô phỏng SVG tương tác và lời giải từng bước.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=3">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -58,7 +59,7 @@
     <div class="container">
         <h1>Hình Chữ Nhật</h1>
 
-        <div class="calc-layout">
+        <div class="calc-grid">
             <div class="calc-col-left">
                 <div class="svg-wrap">
             <svg id="rectSvg" viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg">
@@ -70,15 +71,30 @@
             </svg>
         </div>
 
-        <div class="formula-box">
-            <h2>Công thức</h2>
-            <ul>
-                <li>Chu vi: \(C = 2(a + b)\)</li>
-                <li>Diện tích: \(S = a \times b\)</li>
-                <li>Đường chéo: \(d = \sqrt{a^2 + b^2}\)</li>
-                <li>Bán kính ngoại tiếp: \(R = \dfrac{d}{2} = \dfrac{\sqrt{a^2 + b^2}}{2}\)</li>
-            </ul>
-        </div>
+                <div class="formula-box">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-c" data-inputs="a,b">
+                            Chu vi: <span class="var-token" data-var="C">C</span> = 2(<span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span>)
+                        </li>
+                        <li id="fm-s" data-inputs="a,b">
+                            Diện tích: <span class="var-token" data-var="S">S</span> = <span class="var-token" data-var="a">a</span> × <span class="var-token" data-var="b">b</span>
+                        </li>
+                        <li id="fm-d" data-inputs="a,b">
+                            Đường chéo: <span class="var-token" data-var="d">d</span> = √(<span class="var-token" data-var="a">a</span>² + <span class="var-token" data-var="b">b</span>²)
+                        </li>
+                        <li id="fm-R" data-inputs="a,b">
+                            Bán kính ngoại tiếp: <span class="var-token" data-var="R">R</span> = d/2
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
             </div>
             <div class="calc-col-right">
                 <% if (request.getAttribute("error") != null) { %>
@@ -175,10 +191,26 @@
             labelB.textContent = "b = " + inB;
         }
 
-        // Tự động gọi khi load trang (nếu đã có param) và khi người dùng gõ
-        window.addEventListener('DOMContentLoaded', updateSvgShape);
-        document.getElementById('inputA').addEventListener('input', updateSvgShape);
-        document.getElementById('inputB').addEventListener('input', updateSvgShape);
+        function watchFormulas() {
+            var valA = parseFloat(document.getElementById('inputA').value);
+            var valB = parseFloat(document.getElementById('inputB').value);
+            var hasA = !isNaN(valA) && valA > 0;
+            var hasB = !isNaN(valB) && valB > 0;
+            document.querySelectorAll('.var-token').forEach(function(el) { el.classList.remove('var-known','var-target'); });
+            document.querySelectorAll('.formula-box li').forEach(function(el) { el.classList.remove('formula-ready'); });
+            if (hasA) document.querySelectorAll('.var-token[data-var="a"]').forEach(function(el) { el.classList.add('var-known'); });
+            if (hasB) document.querySelectorAll('.var-token[data-var="b"]').forEach(function(el) { el.classList.add('var-known'); });
+            if (hasA && hasB) {
+                ['fm-c','fm-s','fm-d','fm-R'].forEach(function(id) { document.getElementById(id).classList.add('formula-ready'); });
+                ['C','S','d','R'].forEach(function(v) {
+                    document.querySelectorAll('.var-token[data-var="'+v+'"]').forEach(function(el) { el.classList.add('var-target'); });
+                });
+            }
+        }
+        function handleAll() { watchFormulas(); updateSvgShape(); }
+        window.addEventListener('DOMContentLoaded', handleAll);
+        document.getElementById('inputA').addEventListener('input', handleAll);
+        document.getElementById('inputB').addEventListener('input', handleAll);
     </script>
 
     <footer class="app-footer">

@@ -57,7 +57,7 @@
     <!-- Main Container -->
     <main class="container">
         <h1>Tính Toán Hình Học Phẳng & Không Gian</h1>
-        <p class="page-desc">Hệ thống giải chi tiết từng bước 19 khối hình học 2D và 3D với mô phỏng trực quan.</p>
+        <p class="page-desc">Hệ thống giải chi tiết từng bước các khối hình học 2D và 3D với mô phỏng trực quan.</p>
 
         <div class="shapes-dashboard">
             <!-- 2D Shapes Card -->
@@ -110,9 +110,161 @@
                 <li>Lập phương cạnh \(a\) nội tiếp mặt cầu: \(R = \dfrac{a\sqrt{3}}{2}\)</li>
                 <li>Tỉ số thể tích khối chóp tam giác: \(\dfrac{V_{S.A'B'C'}}{V_{S.ABC}} = \dfrac{SA'}{SA}\cdot\dfrac{SB'}{SB}\cdot\dfrac{SC'}{SC}\)</li>
                 <li>Khối tứ diện đều cạnh \(a\): \(V = \dfrac{a^3\sqrt{2}}{12},\quad S_{tp} = a^2\sqrt{3},\quad h = \dfrac{a\sqrt{6}}{3}\)</li>
-                <li>Tam giác vuông quay quanh 1 cạnh góc vuông tạo thành hình nón: \(r = \text{cạnh còn lại},\ h = \text{cạnh trục quay}\)</li>
+                <li>Tam giác vuông quay quanh 1 cạnh góc vuông → hình nón: \(r = \text{cạnh còn lại},\ h = \text{cạnh trục quay}\)</li>
+                <li>Tỉ số thể tích chóp tứ giác đáy hình bình hành: \(\dfrac{V_{S.A'B'C'D'}}{V_{S.ABCD}} = \dfrac{x+y+z+t}{4xyzt}\) (đk: \(x+z=y+t\))</li>
+                <li>Tỉ số thể tích lăng trụ tam giác: \(\dfrac{V_{ABC.MNP}}{V_{ABC.A'B'C'}} = \dfrac{x+y+z}{3}\)</li>
             </ul>
         </section>
+
+        <!-- 5 Khối Đa Diện Đều -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                5 Khối Đa Diện Đều (Trọng Tâm Trắc Nghiệm Lớp 12)
+            </h2>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:12px;">Ký hiệu \(\{p; q\}\): \(p\) = số cạnh mỗi mặt, \(q\) = số cạnh gặp nhau ở mỗi đỉnh. Định lý Euler: \(Đ - C + M = 2\).</p>
+            <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+                <thead>
+                    <tr style="background:var(--color-primary);color:#fff;">
+                        <th style="padding:8px 10px;text-align:left;">Tên khối</th>
+                        <th style="padding:8px 10px;">Ký hiệu</th>
+                        <th style="padding:8px 10px;">Đỉnh</th>
+                        <th style="padding:8px 10px;">Cạnh</th>
+                        <th style="padding:8px 10px;">Mặt</th>
+                        <th style="padding:8px 10px;">Mp đối xứng</th>
+                        <th style="padding:8px 10px;text-align:left;">Thể tích (V)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background:var(--color-neutral-subtle);">
+                        <td style="padding:8px 10px;font-weight:600;">Tứ diện đều</td>
+                        <td style="padding:8px 10px;text-align:center;">\(\{3;3\}\)</td>
+                        <td style="padding:8px 10px;text-align:center;">4</td>
+                        <td style="padding:8px 10px;text-align:center;">6</td>
+                        <td style="padding:8px 10px;text-align:center;">4</td>
+                        <td style="padding:8px 10px;text-align:center;">6</td>
+                        <td style="padding:8px 10px;">\(V = \dfrac{a^3\sqrt{2}}{12}\)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px 10px;font-weight:600;">Lập phương</td>
+                        <td style="padding:8px 10px;text-align:center;">\(\{4;3\}\)</td>
+                        <td style="padding:8px 10px;text-align:center;">8</td>
+                        <td style="padding:8px 10px;text-align:center;">12</td>
+                        <td style="padding:8px 10px;text-align:center;">6</td>
+                        <td style="padding:8px 10px;text-align:center;">9</td>
+                        <td style="padding:8px 10px;">\(V = a^3\)</td>
+                    </tr>
+                    <tr style="background:var(--color-neutral-subtle);">
+                        <td style="padding:8px 10px;font-weight:600;">Bát diện đều</td>
+                        <td style="padding:8px 10px;text-align:center;">\(\{3;4\}\)</td>
+                        <td style="padding:8px 10px;text-align:center;">6</td>
+                        <td style="padding:8px 10px;text-align:center;">12</td>
+                        <td style="padding:8px 10px;text-align:center;">8</td>
+                        <td style="padding:8px 10px;text-align:center;">9</td>
+                        <td style="padding:8px 10px;">\(V = \dfrac{a^3\sqrt{2}}{3}\)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px 10px;font-weight:600;">12 mặt đều</td>
+                        <td style="padding:8px 10px;text-align:center;">\(\{5;3\}\)</td>
+                        <td style="padding:8px 10px;text-align:center;">20</td>
+                        <td style="padding:8px 10px;text-align:center;">30</td>
+                        <td style="padding:8px 10px;text-align:center;">12</td>
+                        <td style="padding:8px 10px;text-align:center;">15</td>
+                        <td style="padding:8px 10px;">\(V = \dfrac{a^3(15+7\sqrt{5})}{4}\)</td>
+                    </tr>
+                    <tr style="background:var(--color-neutral-subtle);">
+                        <td style="padding:8px 10px;font-weight:600;">20 mặt đều</td>
+                        <td style="padding:8px 10px;text-align:center;">\(\{3;5\}\)</td>
+                        <td style="padding:8px 10px;text-align:center;">12</td>
+                        <td style="padding:8px 10px;text-align:center;">30</td>
+                        <td style="padding:8px 10px;text-align:center;">20</td>
+                        <td style="padding:8px 10px;text-align:center;">15</td>
+                        <td style="padding:8px 10px;">\(V = \dfrac{5a^3(3+\sqrt{5})}{12}\)</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+
+        <!-- Hình chỏm cầu & Đới cầu -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                Hình Chỏm Cầu &amp; Đới Cầu (Bài Toán Thực Tế Lớp 12)
+            </h2>
+            <ul>
+                <li><strong>Chỏm cầu</strong> (bán kính cầu \(R\), chiều cao chỏm \(h\)):
+                    <ul style="margin-top:4px;">
+                        <li>Diện tích xung quanh: \(S_{xq} = 2\pi R h\)</li>
+                        <li>Thể tích: \(V = \pi h^2\left(R - \dfrac{h}{3}\right)\)</li>
+                    </ul>
+                </li>
+                <li style="margin-top:10px;"><strong>Đới cầu</strong> (hai đáy bán kính \(r_1, r_2\), khoảng cách \(h\)):
+                    \[V = \dfrac{1}{6}\pi h\left(3r_1^2 + 3r_2^2 + h^2\right)\]
+                </li>
+            </ul>
+        </section>
+
+        <!-- Bán kính mặt cầu ngoại tiếp -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Bán Kính Mặt Cầu Ngoại Tiếp \(R_{mc}\) (6 Dạng Trọng Tâm)
+            </h2>
+            <ul>
+                <li><strong>Dạng 1</strong> — Chóp có cạnh bên ⊥ đáy (\(SA \perp\) đáy):
+                    \[R_{mc} = \sqrt{R_{\text{đáy}}^2 + \dfrac{SA^2}{4}}\]
+                </li>
+                <li><strong>Dạng 2</strong> — Khối chóp đều (chóp tam giác đều, tứ giác đều):
+                    \[R_{mc} = \dfrac{SA^2}{2 \cdot SO}\]
+                </li>
+                <li><strong>Dạng 3</strong> — Chóp có mặt bên ⊥ mặt phẳng đáy:
+                    \[R_{mc} = \sqrt{R_{\text{đáy}}^2 + R_{\text{bên}}^2 - \dfrac{GT^2}{4}}\]
+                </li>
+                <li><strong>Dạng 4</strong> — Lăng trụ đứng / Lăng trụ đều:
+                    \[R_{mc} = \sqrt{R_{\text{đáy}}^2 + \dfrac{h^2}{4}}\]
+                </li>
+                <li><strong>Dạng 5</strong> — Tứ diện vuông tại \(O\) (\(OA, OB, OC\) đôi một ⊥):
+                    \[R_{mc} = \dfrac{\sqrt{OA^2 + OB^2 + OC^2}}{2}\]
+                </li>
+                <li><strong>Dạng 6</strong> — Tứ diện gần đều (\(AB=CD=a,\; AC=BD=b,\; AD=BC=c\)):
+                    \[R_{mc} = \sqrt{\dfrac{a^2 + b^2 + c^2}{8}}\]
+                </li>
+            </ul>
+        </section>
+
+        <!-- Hệ thống Oxyz -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><line x1="3" y1="3" x2="21" y2="21"></line><path d="M3 21V3h18"></path></svg>
+                Hình Học Tọa Độ Oxyz (Lớp 12)
+            </h2>
+            <ul>
+                <li><strong>Tích có hướng</strong>: Cho \(\vec{u}=(x_1,y_1,z_1),\; \vec{v}=(x_2,y_2,z_2)\):
+                    \[[\vec{u},\vec{v}] = (y_1z_2-z_1y_2\;,\; z_1x_2-x_1z_2\;,\; x_1y_2-y_1x_2)\]
+                </li>
+                <li><strong>Diện tích tam giác</strong> \(ABC\):
+                    \[S_{\Delta ABC} = \dfrac{1}{2}\left|[\vec{AB},\vec{AC}]\right|\]
+                </li>
+                <li><strong>Thể tích tứ diện</strong> \(ABCD\):
+                    \[V = \dfrac{1}{6}\left|[\vec{AB},\vec{AC}]\cdot\vec{AD}\right|\]
+                </li>
+                <li><strong>Thể tích khối hộp</strong> \(ABCD.A'B'C'D'\):
+                    \[V = \left|[\vec{AB},\vec{AD}]\cdot\vec{AA'}\right|\]
+                </li>
+                <li><strong>Khoảng cách điểm → mặt phẳng</strong>: \(M(x_0,y_0,z_0)\) đến \((P): Ax+By+Cz+D=0\):
+                    \[d(M,(P)) = \dfrac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}\]
+                </li>
+                <li><strong>Khoảng cách điểm → đường thẳng</strong>: \(M\) đến \(\Delta\) qua \(A\) với VTCP \(\vec{u}\):
+                    \[d(M,\Delta) = \dfrac{|[\vec{AM},\vec{u}]|}{|\vec{u}|}\]
+                </li>
+                <li><strong>Khoảng cách 2 đường thẳng chéo nhau</strong> \(\Delta_1(A,\vec{u_1}), \Delta_2(B,\vec{u_2})\):
+                    \[d(\Delta_1,\Delta_2) = \dfrac{\left|[\vec{u_1},\vec{u_2}]\cdot\vec{AB}\right|}{\left|[\vec{u_1},\vec{u_2}]\right|}\]
+                </li>
+            </ul>
+        </section>
+
     </main>
 
     <footer class="app-footer">

@@ -1,5 +1,6 @@
-<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+    <meta property="og:site_name" content="Tính Toán Hình Học">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -32,7 +33,7 @@
     <meta property="twitter:description" content="Tính diện tích và chu vi hình thang từ đáy lớn, đáy nhỏ, chiều cao và hai cạnh bên.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=3">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -58,7 +59,7 @@
     <div class="container">
         <h1>Hình Thang</h1>
 
-        <div class="calc-layout">
+        <div class="calc-grid">
             <div class="calc-col-left">
                 <div class="svg-wrap">
             <svg id="thangSvg" viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
@@ -70,14 +71,25 @@
             </svg>
         </div>
 
-        <div class="formula-box">
-            <h2>Công thức</h2>
-            <ul>
-                <li>Diện tích: \(S = \dfrac{(a+b)\cdot h}{2}\)</li>
-                <li>Đường trung bình: \(m = \dfrac{a+b}{2}\)</li>
-            </ul>
+                        <div class="formula-box">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-s" data-inputs="a,b,h">
+                            Diện tích: <span class="var-token" data-var="S">S</span> = (<span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span>) × <span class="var-token" data-var="h">h</span> / 2
+                        </li>
+                        <li id="fm-h-ded" data-inputs="S,a,b">
+                            Suy luận h: <span class="var-token" data-var="h">h</span> = 2S / (<span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span>)
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
         </div>
-            </div>
             <div class="calc-col-right">
                 <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
@@ -130,10 +142,26 @@
             document.getElementById('svgLabelB').textContent = (!isNaN(inB) && inB > 0) ? ('b = ' + inB) : 'b (đáy lớn)';
             document.getElementById('svgLabelH').textContent = (!isNaN(inH) && inH > 0) ? ('h = ' + inH) : 'h';
         }
-        window.addEventListener('DOMContentLoaded', updateSvgShape);
-        document.getElementById('inputA').addEventListener('input', updateSvgShape);
-        document.getElementById('inputB').addEventListener('input', updateSvgShape);
-        document.getElementById('inputH').addEventListener('input', updateSvgShape);
+                function watchFormulas() {
+            var va=parseFloat(document.getElementById('inputA').value);
+            var vb=parseFloat(document.getElementById('inputB').value);
+            var vh=parseFloat(document.getElementById('inputH').value);
+            var ha=!isNaN(va)&&va>0, hb=!isNaN(vb)&&vb>0, hh=!isNaN(vh)&&vh>0;
+            document.querySelectorAll('.var-token').forEach(function(el){el.classList.remove('var-known','var-target');});
+            document.querySelectorAll('.formula-box li').forEach(function(el){el.classList.remove('formula-ready');});
+            if(ha) document.querySelectorAll('.var-token[data-var="a"]').forEach(function(el){el.classList.add('var-known');});
+            if(hb) document.querySelectorAll('.var-token[data-var="b"]').forEach(function(el){el.classList.add('var-known');});
+            if(hh) document.querySelectorAll('.var-token[data-var="h"]').forEach(function(el){el.classList.add('var-known');});
+            if(ha&&hb&&hh){
+                document.getElementById('fm-s').classList.add('formula-ready');
+                document.querySelectorAll('.var-token[data-var="S"]').forEach(function(el){el.classList.add('var-target');});
+            }
+        }
+        function handleAll() { watchFormulas(); updateSvgShape(); }
+        window.addEventListener('DOMContentLoaded', handleAll);
+        document.getElementById('inputA').addEventListener('input', handleAll);
+        document.getElementById('inputB').addEventListener('input', handleAll);
+        document.getElementById('inputH').addEventListener('input', handleAll);
     </script>
 
     <footer class="app-footer">

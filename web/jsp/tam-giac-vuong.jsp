@@ -1,5 +1,6 @@
-<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+    <meta property="og:site_name" content="Tính Toán Hình Học">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -32,7 +33,7 @@
     <meta property="twitter:description" content="Định lý Pythagore, tính cạnh huyền, chiều cao ứng với cạnh huyền, diện tích và chu vi tam giác vuông.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=3">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -58,7 +59,7 @@
     <div class="container">
         <h1>Tam Giác Vuông</h1>
 
-        <div class="calc-layout">
+        <div class="calc-grid">
             <div class="calc-col-left">
                 <div class="svg-wrap">
             <svg id="tgvSvg" viewBox="0 0 290 190" xmlns="http://www.w3.org/2000/svg">
@@ -71,17 +72,34 @@
             </svg>
         </div>
 
-        <div class="formula-box">
-            <h2>Công thức</h2>
-            <ul>
-                <li>Cạnh huyền: \(c = \sqrt{a^2 + b^2}\) — Định lý Pytago</li>
-                <li>Diện tích: \(S = \dfrac{1}{2}\cdot a \cdot b\)</li>
-                <li>Chu vi: \(C = a + b + c\)</li>
-                <li>Đường cao từ đỉnh vuông: \(h = \dfrac{a \cdot b}{c}\)</li>
-                <li>Bán kính ngoại tiếp: \(R = \dfrac{c}{2}\) | Bán kính nội tiếp: \(r = \dfrac{a + b - c}{2}\)</li>
-            </ul>
+                        <div class="formula-box">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-c" data-inputs="a,b">
+                            Cạnh huyền: <span class="var-token" data-var="c">c</span> = √(<span class="var-token" data-var="a">a</span>² + <span class="var-token" data-var="b">b</span>²)
+                        </li>
+                        <li id="fm-s" data-inputs="a,b">
+                            Diện tích: <span class="var-token" data-var="S">S</span> = <span class="var-token" data-var="a">a</span> × <span class="var-token" data-var="b">b</span> / 2
+                        </li>
+                        <li id="fm-per" data-inputs="a,b">
+                            Chu vi: <span class="var-token" data-var="C">C</span> = <span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span> + <span class="var-token" data-var="c">c</span>
+                        </li>
+                        <li id="fm-R" data-inputs="a,b">
+                            Bán kính ngoại tiếp: <span class="var-token" data-var="R">R</span> = c/2
+                        </li>
+                        <li id="fm-r" data-inputs="a,b">
+                            Bán kính nội tiếp: <span class="var-token" data-var="r">r</span> = (<span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span> - c)/2
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
         </div>
-            </div>
             <div class="calc-col-right">
                 <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
@@ -186,7 +204,23 @@
             lblC.setAttribute('x', (startX + rightX) / 2 + 10);
             lblC.setAttribute('y', (topY + baseY) / 2 - 5);
         }
-        window.addEventListener('DOMContentLoaded', updateSvgShape);
+                function watchFormulas() {
+            var v1 = parseFloat(document.getElementById('inputA').value);
+            var v2 = parseFloat(document.getElementById('inputB').value);
+            var has1 = !isNaN(v1) && v1 > 0, has2 = !isNaN(v2) && v2 > 0;
+            document.querySelectorAll('.var-token').forEach(function(el) { el.classList.remove('var-known','var-target'); });
+            document.querySelectorAll('.formula-box li').forEach(function(el) { el.classList.remove('formula-ready'); });
+            if (has1) document.querySelectorAll('.var-token[data-var="a"]').forEach(function(el) { el.classList.add('var-known'); });
+            if (has2) document.querySelectorAll('.var-token[data-var="b"]').forEach(function(el) { el.classList.add('var-known'); });
+            if (has1 && has2) {
+                ['fm-c','fm-s','fm-per','fm-R','fm-r'].forEach(function(id) { document.getElementById(id).classList.add('formula-ready'); });
+                ['c','S','C','R','r'].forEach(function(v) {
+                    document.querySelectorAll('.var-token[data-var="'+v+'"]').forEach(function(el) { el.classList.add('var-target'); });
+                });
+            }
+        }
+        function handleAll() { watchFormulas(); updateSvgShape(); }
+        window.addEventListener('DOMContentLoaded', handleAll);
         document.getElementById('inputC1').addEventListener('input', updateSvgShape);
         document.getElementById('inputC2').addEventListener('input', updateSvgShape);
     </script>

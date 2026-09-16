@@ -1,5 +1,6 @@
-<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+    <meta property="og:site_name" content="Tính Toán Hình Học">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -32,7 +33,7 @@
     <meta property="twitter:description" content="Tính diện tích tam giác theo công thức Heron, tính chu vi và bán kính đường tròn ngoại tiếp / nội tiếp.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=3">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -58,7 +59,7 @@
     <div class="container">
         <h1>Hình Tam Giác</h1>
 
-        <div class="calc-layout">
+        <div class="calc-grid">
             <div class="calc-col-left">
                 <div class="svg-wrap">
             <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
@@ -71,16 +72,31 @@
             </svg>
         </div>
 
-        <div class="formula-box">
-            <h2>Công thức</h2>
-            <ul>
-                <li>Chu vi: \(C = a + b + c\)</li>
-                <li>Diện tích cơ bản: \(S = \dfrac{1}{2}\cdot a \cdot h\)</li>
-                <li>Công thức Heron: \(S = \sqrt{p(p-a)(p-b)(p-c)},\quad p = \dfrac{a+b+c}{2}\)</li>
-                <li>Bán kính ngoại tiếp: \(R = \dfrac{abc}{4S}\) | Bán kính nội tiếp: \(r = \dfrac{S}{p}\)</li>
-            </ul>
+                        <div class="formula-box">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-per" data-inputs="a,b,c">
+                            Chu vi: <span class="var-token" data-var="C">C</span> = <span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span> + <span class="var-token" data-var="c">c</span>
+                        </li>
+                        <li id="fm-s" data-inputs="a,b,c">
+                            Diện tích (Heron): <span class="var-token" data-var="S">S</span> = √(p(p-a)(p-b)(p-c)), p=C/2
+                        </li>
+                        <li id="fm-R" data-inputs="a,b,c">
+                            Bán kính ngoại tiếp: <span class="var-token" data-var="R">R</span> = abc/(4S)
+                        </li>
+                        <li id="fm-r" data-inputs="a,b,c">
+                            Bán kính nội tiếp: <span class="var-token" data-var="r">r</span> = S/p
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
         </div>
-            </div>
             <div class="calc-col-right">
                 <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
@@ -151,10 +167,26 @@
             document.getElementById('svgLabelC').textContent = (!isNaN(inC) && inC > 0) ? ('c = ' + inC) : 'c';
             document.getElementById('svgLabelH').textContent = (!isNaN(inH) && inH > 0) ? ('h = ' + inH) : 'h';
         }
-        window.addEventListener('DOMContentLoaded', updateSvgShape);
-        document.getElementById('inputA').addEventListener('input', updateSvgShape);
-        document.getElementById('inputB').addEventListener('input', updateSvgShape);
-        document.getElementById('inputC').addEventListener('input', updateSvgShape);
+                function watchFormulas() {
+            var va=parseFloat(document.getElementById('inputA').value);
+            var vb=parseFloat(document.getElementById('inputB').value);
+            var vc=parseFloat(document.getElementById('inputC').value);
+            var ha=!isNaN(va)&&va>0, hb=!isNaN(vb)&&vb>0, hc=!isNaN(vc)&&vc>0;
+            document.querySelectorAll('.var-token').forEach(function(el){el.classList.remove('var-known','var-target');});
+            document.querySelectorAll('.formula-box li').forEach(function(el){el.classList.remove('formula-ready');});
+            if(ha) document.querySelectorAll('.var-token[data-var="a"]').forEach(function(el){el.classList.add('var-known');});
+            if(hb) document.querySelectorAll('.var-token[data-var="b"]').forEach(function(el){el.classList.add('var-known');});
+            if(hc) document.querySelectorAll('.var-token[data-var="c"]').forEach(function(el){el.classList.add('var-known');});
+            if(ha&&hb&&hc){
+                ['fm-per','fm-s','fm-R','fm-r'].forEach(function(id){document.getElementById(id).classList.add('formula-ready');});
+                ['C','S','R','r'].forEach(function(v){document.querySelectorAll('.var-token[data-var="'+v+'"]').forEach(function(el){el.classList.add('var-target');});});
+            }
+        }
+        function handleAll() { watchFormulas(); updateSvgShape(); }
+        window.addEventListener('DOMContentLoaded', handleAll);
+        document.getElementById('inputA').addEventListener('input', handleAll);
+        document.getElementById('inputB').addEventListener('input', handleAll);
+        document.getElementById('inputC').addEventListener('input', handleAll);
         document.getElementById('inputH').addEventListener('input', updateSvgShape);
     </script>
 

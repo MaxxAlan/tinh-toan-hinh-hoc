@@ -1,5 +1,6 @@
-<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Tính Toán Hình Học Online">
+    <meta property="og:site_name" content="Tính Toán Hình Học">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -32,7 +33,7 @@
     <meta property="twitter:description" content="Công thức tính nhanh thể tích, chiều cao, diện tích toàn phần của khối tứ diện đều cạnh a ôn thi THPT.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
     <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=3">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -58,7 +59,7 @@
     <div class="container">
         <h1>Tứ Diện Đều</h1>
 
-        <div class="calc-layout">
+        <div class="calc-grid">
             <div class="calc-col-left">
                 <div class="svg-wrap">
             <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
@@ -72,17 +73,34 @@
             </svg>
         </div>
 
-        <div class="formula-box">
-            <h2>Công thức</h2>
-            <ul>
-                <li>Thể tích: \(V = \dfrac{a^3\sqrt{2}}{12}\)</li>
-                <li>Diện tích toàn phần: \(S_{tp} = a^2\sqrt{3}\)</li>
-                <li>Diện tích 1 mặt: \(S_1 = \dfrac{a^2\sqrt{3}}{4}\)</li>
-                <li>Chiều cao: \(h = \dfrac{a\sqrt{6}}{3}\)</li>
-                <li>Bán kính cầu ngoại tiếp: \(R = \dfrac{a\sqrt{6}}{4}\) | Cầu nội tiếp: \(r = \dfrac{a\sqrt{6}}{12}\)</li>
-            </ul>
+                        <div class="formula-box">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-v" data-inputs="a">
+                            Thể tích: <span class="var-token" data-var="V">V</span> = <span class="var-token" data-var="a">a</span>³√2/12
+                        </li>
+                        <li id="fm-s" data-inputs="a">
+                            Diện tích toàn phần: <span class="var-token" data-var="S">S</span> = <span class="var-token" data-var="a">a</span>²√3
+                        </li>
+                        <li id="fm-h" data-inputs="a">
+                            Chiều cao: <span class="var-token" data-var="h">h</span> = <span class="var-token" data-var="a">a</span>√6/3
+                        </li>
+                        <li id="fm-R" data-inputs="a">
+                            Bán kính ngoại tiếp: <span class="var-token" data-var="R">R</span> = <span class="var-token" data-var="a">a</span>√6/4
+                        </li>
+                        <li id="fm-r" data-inputs="a">
+                            Bán kính nội tiếp: <span class="var-token" data-var="r">r</span> = <span class="var-token" data-var="a">a</span>√6/12
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
         </div>
-            </div>
             <div class="calc-col-right">
                 <% if (request.getAttribute("error") != null) { %>
             <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
@@ -139,8 +157,22 @@
             var inA = parseFloat(document.getElementById('inputA').value);
             document.getElementById('svgLabelA').textContent = (!isNaN(inA) && inA > 0) ? ('a = ' + inA) : 'a';
         }
-        window.addEventListener('DOMContentLoaded', updateSvgShape);
-        document.getElementById('inputA').addEventListener('input', updateSvgShape);
+                function watchFormulas() {
+            var val = parseFloat(document.getElementById('inputA').value);
+            var has = !isNaN(val) && val > 0;
+            document.querySelectorAll('.var-token').forEach(function(el) { el.classList.remove('var-known','var-target'); });
+            document.querySelectorAll('.formula-box li').forEach(function(el) { el.classList.remove('formula-ready'); });
+            if (has) {
+                document.querySelectorAll('.var-token[data-var="a"]').forEach(function(el) { el.classList.add('var-known'); });
+                ['fm-v','fm-s','fm-h','fm-R','fm-r'].forEach(function(id) { document.getElementById(id).classList.add('formula-ready'); });
+                ['V','S','h','R','r'].forEach(function(v) {
+                    document.querySelectorAll('.var-token[data-var="'+v+'"]').forEach(function(el) { el.classList.add('var-target'); });
+                });
+            }
+        }
+        function handleAll() { watchFormulas(); updateSvgShape(); }
+        window.addEventListener('DOMContentLoaded', handleAll);
+        document.getElementById('inputA').addEventListener('input', handleAll);
     </script>
 
     <footer class="app-footer">
