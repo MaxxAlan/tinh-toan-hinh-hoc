@@ -74,8 +74,8 @@
                 <input type="number" id="inputR" step="any" name="r" required value="${param.r}" placeholder="Nhập bán kính r">
             </div>
             <div class="form-actions">
-                <button type="submit" class="btn-calc">⚡ Tính toán</button>
-                <button type="reset" class="btn-reset" onclick="window.location.href=window.location.pathname">🔄 Làm mới</button>
+                <button type="submit" class="btn-calc">Tính toán</button>
+                <button type="reset" class="btn-reset" onclick="window.location.href=window.location.pathname">Làm mới</button>
             </div>
         </form>
 
@@ -96,7 +96,7 @@
             </div>
         </div>
         <% } %>
-                <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="btn-home">🏠 Về trang chủ</a>
+                <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="btn-home">Về trang chủ</a>
             </div>
         </div>
     </div>
