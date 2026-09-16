@@ -1,0 +1,25 @@
+# NetBeans & Build Output
+/build/
+/dist/
+nbproject/private/
+
+# IDE & Editor files
+.vscode/
+.settings/
+.idea/
+*.iml
+*.class
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.jsonl
+recovered_*.json

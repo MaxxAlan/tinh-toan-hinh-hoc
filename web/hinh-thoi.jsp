@@ -1,0 +1,183 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hình Thoi</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hình Thoi</h1>
+
+        <div class="svg-wrap">
+            <svg id="rhombusSvg" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg">
+                <!-- Hình thoi (4 đỉnh) -->
+                <polygon id="svgPoly" points="140,25 240,110 140,195 40,110" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+                
+                <!-- Vùng quạt đo góc alpha tại đỉnh trái (40, 110) -->
+                <path id="svgArcAlpha" d="M 40 110 L 61 96 A 32 32 0 0 1 61 124 Z" fill="rgba(214, 158, 46, 0.2)" stroke="#d69e2e" stroke-width="2"/>
+                
+                <!-- Đường chéo d1 (ngang: từ 40,110 đến 240,110) -->
+                <line id="svgLineD1" x1="40" y1="110" x2="240" y2="110" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+                
+                <!-- Đường chéo d2 (dọc: từ 140,25 đến 140,195) -->
+                <line id="svgLineD2" x1="140" y1="25" x2="140" y2="195" stroke="#3182ce" stroke-width="1.5" stroke-dasharray="4,3"/>
+                
+                <!-- Ký hiệu vuông góc ở giao điểm 2 đường chéo (140, 110) -->
+                <path id="svgSqMarker" d="M 140 100 L 150 100 L 150 110" fill="none" stroke="#718096" stroke-width="1.2"/>
+                
+                <!-- Nhãn cạnh a (nằm ngoài cạnh trên bên trái) -->
+                <text id="svgLabelA" x="80" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">a</text>
+                
+                <!-- Nhãn d1 (nằm ngay trên đường chéo d1, lệch sang đoạn 3/4 bên phải, tránh tâm trung điểm) -->
+                <text id="svgLabelD1" x="200" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#e53e3e">d₁</text>
+                
+                <!-- Nhãn d2 (nằm ngay trên đường chéo d2, lệch lên đoạn 1/4 phía trên, tránh tâm trung điểm) -->
+                <text id="svgLabelD2" x="152" y="60" text-anchor="start" font-size="11" font-weight="700" fill="#3182ce">d₂</text>
+                
+                <!-- Nhãn góc alpha nằm lọt hẳn bên trong góc nhọn/hình quạt alpha -->
+                <text id="svgLabelAlpha" x="52" y="113" text-anchor="middle" font-size="12" font-weight="700" fill="#b7791f">α</text>
+            </svg>
+        </div>
+
+        <div class="formula-box">
+            <h2>📐 Công thức</h2>
+            <ul>
+                <li>Chu vi: \(C = 4a\)</li>
+                <li>Diện tích (theo 2 đường chéo): \(S = \dfrac{d_1 \cdot d_2}{2}\)</li>
+                <li>Diện tích (theo cạnh và góc): \(S = a^2 \cdot \sin\alpha\)</li>
+                <li>Bán kính đường tròn nội tiếp: \(r = \dfrac{d_1 \cdot d_2}{4a}\)</li>
+            </ul>
+        </div>
+
+        <% if (request.getAttribute("error") != null) { %>
+            <div style="color: #b91c1c; margin-bottom: 15px; padding: 12px; background: #fee2e2; border-radius: 6px; border: 1px solid #f87171;">
+                <strong>Lỗi:</strong> ${requestScope.error}
+            </div>
+        <% } %>
+        <form class="calc-form" method="post" action="${pageContext.request.contextPath}/RhombusController">
+            <div class="form-row">
+                <label>Cạnh (a):</label>
+                <input type="number" id="inputA" step="any" name="a" required value="${param.a}" placeholder="Cạnh a">
+            </div>
+            <div class="form-row">
+                <label>Đường chéo d₁:</label>
+                <input type="number" id="inputD1" step="any" name="d1" required value="${param.d1}" placeholder="Đường chéo d1">
+            </div>
+            <div class="form-row">
+                <label>Đường chéo d₂:</label>
+                <input type="number" id="inputD2" step="any" name="d2" required value="${param.d2}" placeholder="Đường chéo d2">
+            </div>
+            <div class="form-row">
+                <label>Góc α (độ):</label>
+                <input type="number" id="inputAlpha" step="any" name="alpha" required value="${param.alpha}" placeholder="Góc alpha (độ)">
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Tính toán" class="btn-calc">
+                <button type="reset" class="btn-calc" style="margin-left: 10px; background-color: #718096;" onclick="window.location.href=window.location.pathname">Làm mới</button>
+            </div>
+        </form>
+
+        <% if (request.getAttribute("hthi") != null) { %>
+        <div class="result-box">
+            <h2>📊 Kết quả & Các bước giải chi tiết</h2>
+            <div class="step-detail">
+                <p><strong>1. Chu vi (C):</strong></p>
+                <p>\(C = 4 \times a = 4 \times ${param.a} = \) <strong><fmt:formatNumber value="${requestScope.hthi.getPerimeter()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị dài</span></p>
+            </div>
+            <div class="step-detail">
+                <p><strong>2. Diện tích theo đường chéo (½·d₁·d₂):</strong></p>
+                <p>\(S = \dfrac{d_1 \times d_2}{2} = \dfrac{${param.d1} \times ${param.d2}}{2} = \) <strong><fmt:formatNumber value="${requestScope.hthi.getAreaByDiag()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị diện tích</span></p>
+            </div>
+            <div class="step-detail">
+                <p><strong>3. Diện tích theo góc (a²·sinα):</strong></p>
+                <p>\(S = a^2 \times \sin(${param.alpha}^\circ) = ${param.a}^2 \times \sin(${param.alpha}^\circ) \approx \) <strong><fmt:formatNumber value="${requestScope.hthi.getAreaByAngle()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị diện tích</span></p>
+            </div>
+            <div class="step-detail">
+                <p><strong>4. Bán kính nội tiếp (r):</strong></p>
+                <p>\(r = \dfrac{d_1 \times d_2}{4a} = \dfrac{${param.d1} \times ${param.d2}}{4 \times ${param.a}} \approx \) <strong><fmt:formatNumber value="${requestScope.hthi.getInradius()}" pattern="#,##0.####"/></strong> <span class="unit-badge">đơn vị dài</span></p>
+            </div>
+        </div>
+        <% } %>
+
+        <a href="tinh-toan-hinh-hoc.html" class="btn-home">🏠 Về trang chủ</a>
+    </div>
+
+    <script>
+        function updateSvgShape() {
+            var inA = parseFloat(document.getElementById('inputA').value);
+            var inD1 = parseFloat(document.getElementById('inputD1').value);
+            var inD2 = parseFloat(document.getElementById('inputD2').value);
+            var inAl = parseFloat(document.getElementById('inputAlpha').value);
+            
+            var dispD1 = (!isNaN(inD1) && inD1 > 0) ? inD1 : 12;
+            var dispD2 = (!isNaN(inD2) && inD2 > 0) ? inD2 : 8;
+            
+            var maxRx = 95, maxRy = 75;
+            var scale = Math.min(maxRx / (dispD1 / 2), maxRy / (dispD2 / 2));
+            var rx = Math.max(25, Math.min(maxRx, (dispD1 / 2) * scale));
+            var ry = Math.max(20, Math.min(maxRy, (dispD2 / 2) * scale));
+            
+            var cx = 135, cy = 110;
+            var xLeft = cx - rx, xRight = cx + rx;
+            var yTop = cy - ry, yBottom = cy + ry;
+            
+            var poly = document.getElementById('svgPoly');
+            poly.setAttribute('points', cx + ',' + yTop + ' ' + xRight + ',' + cy + ' ' + cx + ',' + yBottom + ' ' + xLeft + ',' + cy);
+            
+            var lineD1 = document.getElementById('svgLineD1');
+            lineD1.setAttribute('x1', xLeft); lineD1.setAttribute('y1', cy);
+            lineD1.setAttribute('x2', xRight); lineD1.setAttribute('y2', cy);
+            
+            var lineD2 = document.getElementById('svgLineD2');
+            lineD2.setAttribute('x1', cx); lineD2.setAttribute('y1', yTop);
+            lineD2.setAttribute('x2', cx); lineD2.setAttribute('y2', yBottom);
+            
+            var sqSize = Math.min(12, Math.min(rx, ry) * 0.25);
+            var sq = document.getElementById('svgSqMarker');
+            sq.setAttribute('d', 'M ' + cx + ' ' + (cy - sqSize) + ' L ' + (cx + sqSize) + ' ' + (cy - sqSize) + ' L ' + (cx + sqSize) + ' ' + cy);
+            
+            // Hình quạt góc alpha tại đỉnh trái (xLeft, cy)
+            var arcR = Math.min(36, Math.min(rx, ry) * 0.55);
+            var sideLen = Math.sqrt(rx * rx + ry * ry);
+            var cosTh = rx / sideLen, sinTh = ry / sideLen;
+            var arcX1 = xLeft + arcR * cosTh, arcY1 = cy - arcR * sinTh;
+            var arcX2 = xLeft + arcR * cosTh, arcY2 = cy + arcR * sinTh;
+            var arcEl = document.getElementById('svgArcAlpha');
+            arcEl.setAttribute('d', 'M ' + xLeft + ' ' + cy + ' L ' + arcX1.toFixed(1) + ' ' + arcY1.toFixed(1) + ' A ' + arcR + ' ' + arcR + ' 0 0 1 ' + arcX2.toFixed(1) + ' ' + arcY2.toFixed(1) + ' Z');
+            
+            var lblAlpha = document.getElementById('svgLabelAlpha');
+            lblAlpha.textContent = (!isNaN(inAl) && inAl > 0) ? (inAl + '°') : 'α';
+            lblAlpha.setAttribute('x', (xLeft + arcR * 0.45));
+            lblAlpha.setAttribute('y', cy + 4);
+            
+            var lblA = document.getElementById('svgLabelA');
+            lblA.textContent = (!isNaN(inA) && inA > 0) ? ('a = ' + inA) : 'a';
+            lblA.setAttribute('x', (xLeft + cx) / 2 - 14);
+            lblA.setAttribute('y', (yTop + cy) / 2 - 10);
+            
+            var lblD1 = document.getElementById('svgLabelD1');
+            lblD1.textContent = (!isNaN(inD1) && inD1 > 0) ? ('d₁ = ' + inD1) : 'd₁';
+            lblD1.setAttribute('x', (cx + rx * 0.55));
+            lblD1.setAttribute('y', cy - 6);
+            
+            var lblD2 = document.getElementById('svgLabelD2');
+            lblD2.textContent = (!isNaN(inD2) && inD2 > 0) ? ('d₂ = ' + inD2) : 'd₂';
+            lblD2.setAttribute('x', cx + 8);
+            lblD2.setAttribute('y', (cy - ry * 0.55));
+        }
+        window.addEventListener('DOMContentLoaded', updateSvgShape);
+        document.getElementById('inputA').addEventListener('input', updateSvgShape);
+        document.getElementById('inputD1').addEventListener('input', updateSvgShape);
+        document.getElementById('inputD2').addEventListener('input', updateSvgShape);
+        document.getElementById('inputAlpha').addEventListener('input', updateSvgShape);
+    </script>
+</body>
+</html>
