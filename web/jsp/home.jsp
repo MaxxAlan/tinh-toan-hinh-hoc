@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -30,8 +31,8 @@
     <meta property="twitter:description" content="Tính Toán Hình Học - Giải Chi Tiết Hình 2D & 3D Chuẩn SGK - THPT">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg">
 
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="icon" type="image/svg+xml" href="${pageContext.request.contextPath}/assets/favicon.svg">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?v=3">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -41,7 +42,7 @@
     <!-- App Header & Brand -->
     <header class="app-header">
         <div class="header-inner">
-            <a href="index.html" class="brand">
+            <a href="${pageContext.request.contextPath}/tinh-toan-hinh-hoc" class="brand">
                 <div class="brand-icon">
                     <svg viewBox="0 0 24 24"><polygon points="3 20 21 20 12 4 3 20"></polygon><line x1="12" y1="4" x2="12" y2="20"></line></svg>
                 </div>
@@ -64,15 +65,15 @@
                     Hình Phẳng (2D)
                 </h2>
                 <ul class="shape-list">
-                    <li><a href="hinh-vuong">Hình Vuông</a></li>
-                    <li><a href="hinh-chu-nhat">Hình Chữ Nhật</a></li>
-                    <li><a href="hinh-tron">Hình Tròn</a></li>
-                    <li><a href="hinh-tam-giac">Tam Giác</a></li>
-                    <li><a href="tam-giac-deu">Tam Giác Đều</a></li>
-                    <li><a href="tam-giac-vuong">Tam Giác Vuông</a></li>
-                    <li><a href="hinh-thang">Hình Thang</a></li>
-                    <li><a href="hinh-binh-hanh">Hình Bình Hành</a></li>
-                    <li><a href="hinh-thoi">Hình Thoi</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-vuong">Hình Vuông</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-chu-nhat">Hình Chữ Nhật</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-tron">Hình Tròn</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-tam-giac">Tam Giác</a></li>
+                    <li><a href="${pageContext.request.contextPath}/tam-giac-deu">Tam Giác Đều</a></li>
+                    <li><a href="${pageContext.request.contextPath}/tam-giac-vuong">Tam Giác Vuông</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-thang">Hình Thang</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-binh-hanh">Hình Bình Hành</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-thoi">Hình Thoi</a></li>
                 </ul>
             </section>
 
@@ -83,16 +84,16 @@
                     Hình Không Gian (3D)
                 </h2>
                 <ul class="shape-list">
-                    <li><a href="hop-chu-nhat">Hộp Chữ Nhật</a></li>
-                    <li><a href="hinh-lap-phuong">Lập Phương</a></li>
-                    <li><a href="lang-tru">Lăng Trụ</a></li>
-                    <li><a href="hinh-chop">Hình Chóp</a></li>
-                    <li><a href="hinh-chop-cut">Chóp Cụt</a></li>
-                    <li><a href="hinh-tru">Hình Trụ</a></li>
-                    <li><a href="hinh-non">Hình Nón</a></li>
-                    <li><a href="hinh-non-cut">Nón Cụt</a></li>
-                    <li><a href="hinh-cau">Hình Cầu</a></li>
-                    <li><a href="tu-dien-deu">Tứ Diện Đều</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hop-chu-nhat">Hộp Chữ Nhật</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-lap-phuong">Lập Phương</a></li>
+                    <li><a href="${pageContext.request.contextPath}/lang-tru">Lăng Trụ</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-chop">Hình Chóp</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-chop-cut">Chóp Cụt</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-tru">Hình Trụ</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-non">Hình Nón</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-non-cut">Nón Cụt</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-cau">Hình Cầu</a></li>
+                    <li><a href="${pageContext.request.contextPath}/tu-dien-deu">Tứ Diện Đều</a></li>
                 </ul>
             </section>
         </div>

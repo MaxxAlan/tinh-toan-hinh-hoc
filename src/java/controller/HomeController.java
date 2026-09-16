@@ -11,7 +11,7 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Forward trực tiếp sang trang chủ index.html
-        request.getRequestDispatcher("/index.html").forward(request, response);
+        // Forward trực tiếp sang view JSP trang chủ
+        request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
     }
 }
