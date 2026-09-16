@@ -40,19 +40,19 @@ Repository: [https://github.com/MaxxAlan/tinh-toan-hinh-hoc](https://github.com/
 
 ### Cách 2: Triển khai file .war lên Server Tomcat
 1. Đóng gói dự án bằng lệnh Ant:
-   `bash
+   ```bash
    ant dist
-   `
-2. File hocJSP.war được sinh ra trong thư mục dist/.
-3. Copy file hocJSP.war vào thư mục webapps/ của Apache Tomcat:
-   `bash
+   ```
+2. File `hocJSP.war` được sinh ra trong thư mục `dist/`.
+3. Copy file `hocJSP.war` vào thư mục `webapps/` của Apache Tomcat:
+   ```bash
    cp dist/hocJSP.war <TOMCAT_HOME>/webapps/
-   `
+   ```
 4. Khởi động Tomcat và truy cập trình duyệt:
-   `
-   http://localhost:8080/hocJSP/
-   `
-   *(Trang chủ chào đón: 	tinh-toan-hinh-hoc.html)*
+   ```
+   http://localhost:8080/hocJSP/tinh-toan-hinh-hoc
+   ```
+   *(Trang chủ chào đón: `tinh-toan-hinh-hoc.html` hoặc Clean URL `/tinh-toan-hinh-hoc`)*
 
 ---
 
