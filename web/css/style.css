@@ -400,8 +400,91 @@ h2 {
 .formula-box li {
     font-size: 0.88rem;
     color: var(--color-text-main);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     line-height: 1.5;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    transition: all 200ms ease;
+    border: 1px solid transparent;
+}
+
+/* Live Formula Watching & Interactive Variables */
+.formula-box li.formula-ready {
+    background: #f0fdf4;
+    border-color: #86efac;
+    box-shadow: 0 1px 3px rgba(34, 197, 94, 0.12);
+}
+
+.var-token {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-weight: 600;
+    transition: all 200ms ease;
+    border: 1px solid transparent;
+}
+
+/* Màu xanh: Dữ kiện đã có (đã nhập) */
+.var-known {
+    background: #dcfce7 !important;
+    color: #15803d !important;
+    border-color: #86efac !important;
+    box-shadow: 0 1px 2px rgba(22, 163, 74, 0.15);
+}
+
+/* Màu vàng: Dữ kiện còn thiếu / cần tính / suy ra */
+.var-target {
+    background: #fef3c7 !important;
+    color: #b45309 !important;
+    border-color: #fcd34d !important;
+    box-shadow: 0 1px 2px rgba(217, 119, 6, 0.15);
+}
+
+/* Legend chú thích màu */
+.formula-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--color-border);
+    font-size: 0.76rem;
+    color: var(--color-text-muted);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-dot.dot-known {
+    background: #16a34a;
+    box-shadow: 0 0 0 2px #dcfce7;
+}
+
+.legend-dot.dot-target {
+    background: #d97706;
+    box-shadow: 0 0 0 2px #fef3c7;
+}
+
+.badge-optional {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: var(--color-neutral-subtle);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    margin-left: 6px;
 }
 
 /* Example Quick Info in Left Column to Balance Height */

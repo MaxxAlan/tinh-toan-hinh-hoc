@@ -87,6 +87,13 @@
                             Đường kính: <span class="var-token" data-var="d">d</span> = 2<span class="var-token" data-var="r">R</span>
                         </li>
                     </ul>
+                        <li id="fm-chom-cau">
+                            Chỏm cầu (chiều cao \(h\)): \(S_{xq} = 2\pi Rh,\quad V = \pi h^2\left(R - \dfrac{h}{3}\right)\)
+                        </li>
+                        <li id="fm-doi-cau">
+                            Đới cầu (hai đáy \(r_1, r_2\), bề dày \(h\)): \(V = \dfrac{1}{6}\pi h(3r_1^2 + 3r_2^2 + h^2)\)
+                        </li>
+                    </ul>
                     <div class="formula-legend">
                         <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
                         <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>

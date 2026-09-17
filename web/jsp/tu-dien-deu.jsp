@@ -95,6 +95,13 @@
                             Bán kính nội tiếp: <span class="var-token" data-var="r">r</span> = <span class="var-token" data-var="a">a</span>√6/12
                         </li>
                     </ul>
+                        <li id="fm-rmc-td-vuong">
+                            \(R_{mc}\) (Tứ diện vuông tại \(O\): \(OA,OB,OC\) đôi một ⊥): \(R_{mc} = \dfrac{\sqrt{OA^2+OB^2+OC^2}}{2}\)
+                        </li>
+                        <li id="fm-rmc-td-gandieu">
+                            \(R_{mc}\) (Tứ diện gần đều cạnh đối \(a,b,c\)): \(R_{mc} = \sqrt{\dfrac{a^2+b^2+c^2}{8}}\)
+                        </li>
+                    </ul>
                     <div class="formula-legend">
                         <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
                         <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>

@@ -84,12 +84,24 @@
             </svg>
         </div>
                 <div class="formula-box">
-            <h2><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Công Thức Tính</h2>
-            <ul>
-                <li>Diện tích: \(S = \dfrac{(a+b)\cdot h}{2}\)</li>
-                <li>Đường trung bình: \(m = \dfrac{a+b}{2}\)</li>
-            </ul>
-        </div>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-s" data-inputs="a,b,h">
+                            Diện tích: <span class="var-token" data-var="S">S</span> = (<span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span>) × <span class="var-token" data-var="h">h</span> / 2
+                        </li>
+                        <li id="fm-h-ded" data-inputs="S,a,b">
+                            Suy luận h: <span class="var-token" data-var="h">h</span> = 2S / (<span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span>)
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
+
                 <div class="quick-info-box">
                     <strong>Ghi chú:</strong> Nhập đầy đủ các thông số ở cột bên phải rồi nhấn Tính toán để hiển thị các bước giải chi tiết.
                 </div>

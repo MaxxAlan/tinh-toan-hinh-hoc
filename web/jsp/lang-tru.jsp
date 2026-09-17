@@ -87,6 +87,13 @@
                             Diện tích xung quanh: <span class="var-token" data-var="Sxq">S<sub>xq</sub></span> = C<sub>đáy</sub> × <span class="var-token" data-var="h">h</span>
                         </li>
                     </ul>
+                        <li id="fm-rmc-langtru">
+                            \(R_{mc}\) (Lăng trụ đứng / đều, cao \(h\)): \(R_{mc} = \sqrt{R_{\text{đáy}}^2 + \dfrac{h^2}{4}}\)
+                        </li>
+                        <li id="fm-ti-so-langtru">
+                            Tỉ số thể tích lăng trụ tam giác: \(\dfrac{V_{ABC.MNP}}{V_{ABC.A'B'C'}} = \dfrac{x+y+z}{3}\)
+                        </li>
+                    </ul>
                     <div class="formula-legend">
                         <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
                         <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>

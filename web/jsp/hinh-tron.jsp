@@ -83,6 +83,15 @@
                             Diện tích: <span class="var-token" data-var="S">S</span> = π<span class="var-token" data-var="r">r</span>²
                         </li>
                         <li id="fm-d" data-inputs="r">
+                        <li id="fm-quat">
+                            Hình quạt tròn (bán kính \(r\), góc \(n^\circ\)): \(l = \dfrac{\pi r n}{180}\), \(S_q = \dfrac{\pi r^2 n}{360} = \dfrac{1}{2}lr\)
+                        </li>
+                        <li id="fm-vanh-khan">
+                            Hình vành khăn (bán kính \(R, r\) với \(R > r\)): \(S = \pi (R^2 - r^2)\)
+                        </li>
+                        <li id="fm-vien-phan">
+                            Hình viên phân: \(S_{vp} = S_{\text{quạt}} - S_{\Delta\text{ (2 bán kính, dây)}}\)
+                        </li>
                             Đường kính: <span class="var-token" data-var="d">d</span> = 2<span class="var-token" data-var="r">r</span>
                         </li>
                     </ul>

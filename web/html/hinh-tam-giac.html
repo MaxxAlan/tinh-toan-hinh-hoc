@@ -29,8 +29,8 @@
     <meta property="twitter:description" content="Đa giác 3 cạnh với tổng 3 góc bằng 180 độ. Diện tích tam giác bất kỳ được tính thuận tiện nhất qua công thức Heron.">
     <meta property="twitter:image" content="https://maxxalan.github.io/tinh-toan-hinh-hoc/web/assets/og-image.jpg?v=2">
 
-    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="icon" type="image/svg+xml" href="../web/assets/favicon.svg">
+    <link rel="stylesheet" href="../web/css/style.css?v=3">
     <script>
         MathJax = { tex: { inlineMath: [['\\(','\\)']] }, svg: { fontCache: 'global' } };
     </script>
@@ -47,13 +47,13 @@
     <!-- App Header -->
     <header class="app-header">
         <div class="header-inner">
-            <a href="../../" class="brand">
+            <a href="../" class="brand">
                 <div class="brand-icon">
                     <svg viewBox="0 0 24 24"><polygon points="3 20 21 20 12 4 3 20"></polygon><line x1="12" y1="4" x2="12" y2="20"></line></svg>
                 </div>
                 <span>Tính Toán Hình Học</span>
             </a>
-            <a href="../../" class="nav-back-link">
+            <a href="../" class="nav-back-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 <span>Về trang chủ</span>
             </a>
@@ -63,7 +63,7 @@
     <main class="container">
         <!-- Breadcrumb Navigation -->
         <nav class="breadcrumb">
-            <a href="../../">Trang chủ</a>
+            <a href="../">Trang chủ</a>
             <span>/</span>
             <strong>Tam Giác</strong>
         </nav>
@@ -85,14 +85,39 @@
             </svg>
         </div>
                 <div class="formula-box">
-            <h2><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Công Thức Tính</h2>
-            <ul>
-                <li>Chu vi: \(C = a + b + c\)</li>
-                <li>Diện tích cơ bản: \(S = \dfrac{1}{2}\cdot a \cdot h\)</li>
-                <li>Công thức Heron: \(S = \sqrt{p(p-a)(p-b)(p-c)},\quad p = \dfrac{a+b+c}{2}\)</li>
-                <li>Bán kính ngoại tiếp: \(R = \dfrac{abc}{4S}\) | Bán kính nội tiếp: \(r = \dfrac{S}{p}\)</li>
-            </ul>
-        </div>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-per" data-inputs="a,b,c">
+                            Chu vi: <span class="var-token" data-var="C">C</span> = <span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span> + <span class="var-token" data-var="c">c</span>
+                        </li>
+                        <li id="fm-s" data-inputs="a,b,c">
+                            Diện tích (Heron): <span class="var-token" data-var="S">S</span> = √(p(p-a)(p-b)(p-c)), p=C/2
+                        </li>
+                        <li id="fm-R" data-inputs="a,b,c">
+                            Bán kính ngoại tiếp: <span class="var-token" data-var="R">R</span> = abc/(4S)
+                        </li>
+                        <li id="fm-r" data-inputs="a,b,c">
+                        <li id="fm-cosin">
+                            Định lý Cosin: \(a^2 = b^2 + c^2 - 2bc\cos A\)
+                        </li>
+                        <li id="fm-sin">
+                            Định lý Sin: \(\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R\)
+                        </li>
+                        <li id="fm-s-angle">
+                            Diện tích theo góc: \(S = \dfrac{1}{2}ab\sin C = \dfrac{1}{2}bc\sin A\)
+                        </li>
+                            Bán kính nội tiếp: <span class="var-token" data-var="r">r</span> = S/p
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
+
                 <div class="quick-info-box">
                     <strong>Ghi chú:</strong> Nhập đầy đủ các thông số ở cột bên phải rồi nhấn Tính toán để hiển thị các bước giải chi tiết.
                 </div>
@@ -130,7 +155,7 @@
                     <div id="clientSteps"></div>
                 </div>
 
-                <a href="../../" class="btn-home-bottom">
+                <a href="../" class="btn-home-bottom">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                     <span>Quay lại trang chủ</span>
                 </a>

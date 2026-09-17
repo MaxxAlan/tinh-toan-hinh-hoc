@@ -83,13 +83,36 @@
             </svg>
         </div>
                 <div class="formula-box">
-            <h2><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Công Thức Tính</h2>
-            <ul>
-                <li>Chu vi (Độ dài đường tròn): \(C = 2\pi r\)</li>
-                <li>Diện tích: \(S = \pi r^2\)</li>
-                <li>Đường kính: \(d = 2r\)</li>
-            </ul>
-        </div>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-c" data-inputs="r">
+                            Chu vi: <span class="var-token" data-var="C">C</span> = 2π<span class="var-token" data-var="r">r</span>
+                        </li>
+                        <li id="fm-s" data-inputs="r">
+                            Diện tích: <span class="var-token" data-var="S">S</span> = π<span class="var-token" data-var="r">r</span>²
+                        </li>
+                        <li id="fm-d" data-inputs="r">
+                        <li id="fm-quat">
+                            Hình quạt tròn (bán kính \(r\), góc \(n^\circ\)): \(l = \dfrac{\pi r n}{180}\), \(S_q = \dfrac{\pi r^2 n}{360} = \dfrac{1}{2}lr\)
+                        </li>
+                        <li id="fm-vanh-khan">
+                            Hình vành khăn (bán kính \(R, r\) với \(R > r\)): \(S = \pi (R^2 - r^2)\)
+                        </li>
+                        <li id="fm-vien-phan">
+                            Hình viên phân: \(S_{vp} = S_{\text{quạt}} - S_{\Delta\text{ (2 bán kính, dây)}}\)
+                        </li>
+                            Đường kính: <span class="var-token" data-var="d">d</span> = 2<span class="var-token" data-var="r">r</span>
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
+
                 <div class="quick-info-box">
                     <strong>Ghi chú:</strong> Nhập đầy đủ các thông số ở cột bên phải rồi nhấn Tính toán để hiển thị các bước giải chi tiết.
                 </div>
@@ -191,6 +214,28 @@
             ]);
         }
         
+    </script>
+<script>
+        function watchFormulas() {
+            var inR = parseFloat(document.getElementById('inputR').value);
+            var hasR = !isNaN(inR) && inR > 0;
+            document.querySelectorAll('.var-token').forEach(function(el) { el.classList.remove('var-known','var-target'); });
+            document.querySelectorAll('.formula-box li').forEach(function(el) { el.classList.remove('formula-ready'); });
+            if (hasR) {
+                document.querySelectorAll('.var-token[data-var="r"]').forEach(function(el) { el.classList.add('var-known'); });
+                ['fm-c','fm-s','fm-d'].forEach(function(id) { document.getElementById(id).classList.add('formula-ready'); });
+                ['C','S','d'].forEach(function(v) {
+                    document.querySelectorAll('.var-token[data-var="'+v+'"]').forEach(function(el) { el.classList.add('var-target'); });
+                });
+            }
+        }
+        function updateSvgShape() {
+            var inR = parseFloat(document.getElementById('inputR').value);
+            document.getElementById('svgLabelR').textContent = (!isNaN(inR) && inR > 0) ? ("r = " + inR) : "r";
+        }
+        function handleAll() { watchFormulas(); updateSvgShape(); }
+        window.addEventListener('DOMContentLoaded', handleAll);
+        document.getElementById('inputR').addEventListener('input', handleAll);
     </script>
 </body>
 </html>

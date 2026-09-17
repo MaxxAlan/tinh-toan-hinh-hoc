@@ -76,6 +76,8 @@
                     <li><a href="${pageContext.request.contextPath}/hinh-thang">Hình Thang</a></li>
                     <li><a href="${pageContext.request.contextPath}/hinh-binh-hanh">Hình Bình Hành</a></li>
                     <li><a href="${pageContext.request.contextPath}/hinh-thoi">Hình Thoi</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-luc-giac-deu">Hình Lục Giác Đều</a></li>
+                    <li><a href="${pageContext.request.contextPath}/hinh-elip">Hình Elip</a></li>
                 </ul>
             </section>
 
@@ -113,6 +115,87 @@
                 <li>Tam giác vuông quay quanh 1 cạnh góc vuông → hình nón: \(r = \text{cạnh còn lại},\ h = \text{cạnh trục quay}\)</li>
                 <li>Tỉ số thể tích chóp tứ giác đáy hình bình hành: \(\dfrac{V_{S.A'B'C'D'}}{V_{S.ABCD}} = \dfrac{x+y+z+t}{4xyzt}\) (đk: \(x+z=y+t\))</li>
                 <li>Tỉ số thể tích lăng trụ tam giác: \(\dfrac{V_{ABC.MNP}}{V_{ABC.A'B'C'}} = \dfrac{x+y+z}{3}\)</li>
+            </ul>
+        </section>
+
+
+        <!-- 1. Hình Lục Giác Đều -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon></svg>
+                Hình Lục Giác Đều (Toán 6 &amp; Toán 10)
+            </h2>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:12px;">Cấu tạo từ 6 tam giác đều bằng nhau cạnh \(a\), 6 góc ở đỉnh bằng nhau (\(120^\circ\)).</p>
+            <ul>
+                <li>Chu vi: \(P = 6a\)</li>
+                <li>Diện tích: \(S = 6 \cdot \dfrac{a^2\sqrt{3}}{4} = \dfrac{3\sqrt{3}a^2}{2}\)</li>
+                <li>Bán kính đường tròn ngoại tiếp: \(R = a\)</li>
+                <li>Bán kính đường tròn nội tiếp: \(r = \dfrac{a\sqrt{3}}{2}\)</li>
+                <li>Đường chéo chính (nối 2 đỉnh đối diện qua tâm): \(d_1 = 2a\)</li>
+                <li>Đường chéo phụ (nối 2 đỉnh cách nhau 1 đỉnh): \(d_2 = a\sqrt{3}\)</li>
+            </ul>
+        </section>
+
+        <!-- 2. Hình Quạt Tròn, Hình Vành Khăn & Viên Phân -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="12 12 12 2 19 7 12 12"></polygon></svg>
+                Hình Quạt Tròn, Hình Vành Khăn &amp; Hình Viên Phân (Toán 9 &amp; Lớp 12)
+            </h2>
+            <ul>
+                <li><strong>Hình quạt tròn</strong> (bán kính \(R\), góc ở tâm \(n^\circ\) hoặc \(\alpha\) radian):
+                    <ul style="margin-top:4px;">
+                        <li>Độ dài cung tròn: \(l = \dfrac{\pi R n}{180} = \alpha R\)</li>
+                        <li>Diện tích quạt tròn: \(S_q = \dfrac{\pi R^2 n}{360} = \dfrac{1}{2}l R = \dfrac{1}{2}\alpha R^2\)</li>
+                    </ul>
+                </li>
+                <li style="margin-top:10px;"><strong>Hình vành khăn</strong> (giới hạn bởi hai đường tròn đồng tâm bán kính \(R\) và \(r\) với \(R > r\)):
+                    \[S = \pi (R^2 - r^2)\]
+                </li>
+                <li style="margin-top:10px;"><strong>Hình viên phân</strong> (phần hình tròn giới hạn bởi một dây cung và cung tròn tương ứng):
+                    \[S_{vp} = S_{\text{quạt}} - S_{\Delta \text{ (tạo bởi 2 bán kính và dây)}}\]
+                </li>
+            </ul>
+        </section>
+
+        <!-- 3. Hình Elip -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6"></ellipse></svg>
+                Hình Elip (Toán 10 &amp; Ứng Dụng Tích Phân Lớp 12)
+            </h2>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:12px;">Phương trình chính tắc: \(\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1\) (với \(a > b > 0\)).</p>
+            <ul>
+                <li>Độ dài trục lớn: \(2a\), độ dài trục bé: \(2b\)</li>
+                <li>Tiêu cự: \(2c = 2\sqrt{a^2 - b^2}\) (tiêu điểm \(F_1(-c, 0), F_2(c, 0)\))</li>
+                <li>Tâm sai: \(e = \dfrac{c}{a} < 1\)</li>
+                <li>Diện tích hình Elip: \[S = \pi a b\]</li>
+                <li>Chu vi hình Elip (công thức xấp xỉ Ramanujan chính xác cao):
+                    \[C \approx \pi \left[ 3(a + b) - \sqrt{(3a + b)(a + 3b)} \right]\]
+                </li>
+            </ul>
+        </section>
+
+        <!-- 4. Hệ Thức Lượng & Bán Kính Đường Tròn Trong Tam Giác -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><polygon points="12 3 2 21 22 21 12 3"></polygon></svg>
+                Hệ Thức Lượng &amp; Bán Kính Đường Tròn Trong Tam Giác (Toán 10)
+            </h2>
+            <ul>
+                <li><strong>Định lý Cosin</strong>:
+                    \[a^2 = b^2 + c^2 - 2bc\cos A,\quad b^2 = a^2 + c^2 - 2ac\cos B,\quad c^2 = a^2 + b^2 - 2ab\cos C\]
+                </li>
+                <li><strong>Định lý Sin</strong>:
+                    \[\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R\]
+                </li>
+                <li><strong>Bán kính ngoại tiếp \(R\) và nội tiếp \(r\)</strong>:
+                    \[R = \dfrac{abc}{4S},\qquad r = \dfrac{S}{p} \quad \left(p = \dfrac{a+b+c}{2}\right)\]
+                </li>
+                <li><strong>Công thức diện tích nâng cao</strong>:
+                    \[S = \dfrac{1}{2}ab\sin C = \dfrac{1}{2}bc\sin A = \dfrac{1}{2}ac\sin B\]
+                    \[S = \sqrt{p(p-a)(p-b)(p-c)} \quad (\text{Công thức Heron})\]
+                </li>
             </ul>
         </section>
 
@@ -230,6 +313,23 @@
                 </li>
                 <li><strong>Dạng 6</strong> — Tứ diện gần đều (\(AB=CD=a,\; AC=BD=b,\; AD=BC=c\)):
                     \[R_{mc} = \sqrt{\dfrac{a^2 + b^2 + c^2}{8}}\]
+                </li>
+            </ul>
+        </section>
+
+        <!-- Khoảng cách & Góc trong không gian 11 -->
+        <section class="formula-box" style="margin-top: 24px;">
+            <h2>
+                <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                Khoảng Cách &amp; Góc Trong Không Gian (Lớp 11 - Cổ Điển)
+            </h2>
+            <ul>
+                <li><strong>Mô hình 3 nét vẽ kinh điển</strong> — Khoảng cách từ chân đường vuông góc \(H\) đến mặt bên nghiêng:
+                    <p style="margin:6px 0 2px;font-size:0.88rem;color:var(--color-text-muted);">Kẻ \(HI \perp\) giao tuyến đáy, kẻ \(HK \perp SI\) (với \(S\) là đỉnh).</p>
+                    \[\dfrac{1}{HK^2} = \dfrac{1}{SH^2} + \dfrac{1}{HI^2} \implies HK = \dfrac{SH \cdot HI}{\sqrt{SH^2 + HI^2}}\]
+                </li>
+                <li><strong>Công thức đổi điểm tính khoảng cách</strong>:
+                    \[\dfrac{d(A, (\alpha))}{d(B, (\alpha))} = \dfrac{IA}{IB} \quad \text{với } AB \cap (\alpha) = I\]
                 </li>
             </ul>
         </section>

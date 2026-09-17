@@ -105,14 +105,34 @@
             </svg>
         </div>
                 <div class="formula-box">
-            <h2><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Công Thức Tính</h2>
-            <ul>
-                <li>Chu vi: \(C = 4a\)</li>
-                <li>Diện tích (theo 2 đường chéo): \(S = \dfrac{d_1 \cdot d_2}{2}\)</li>
-                <li>Diện tích (theo cạnh và góc): \(S = a^2 \cdot \sin\alpha\)</li>
-                <li>Bán kính đường tròn nội tiếp: \(r = \dfrac{d_1 \cdot d_2}{4a}\)</li>
-            </ul>
-        </div>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-c" data-inputs="a">
+                            Chu vi: <span class="var-token" data-var="C">C</span> = 4<span class="var-token" data-var="a">a</span>
+                        </li>
+                        <li id="fm-s-diag" data-inputs="d1,d2">
+                            Diện tích (2 đường chéo): <span class="var-token" data-var="S">S</span> = \(\dfrac{1}{2}\)<span class="var-token" data-var="d1">d₁</span> · <span class="var-token" data-var="d2">d₂</span>
+                        </li>
+                        <li id="fm-s-angle" data-inputs="a,alpha">
+                            Diện tích (cạnh & góc): <span class="var-token" data-var="S">S</span> = <span class="var-token" data-var="a">a</span>² · \(\sin\)<span class="var-token" data-var="alpha">α</span>
+                        </li>
+                        <li id="fm-pythagoras" data-inputs="d1,d2">
+                            Quan hệ cạnh & chéo: <span class="var-token" data-var="a">a</span> = \(\sqrt{(d_1/2)^2 + (d_2/2)^2}\)
+                        </li>
+                        <li id="fm-inradius" data-inputs="d1,d2,a">
+                            Bán kính nội tiếp: <span class="var-token" data-var="r">r</span> = \(\dfrac{d_1 \cdot d_2}{4a}\)
+                        </li>
+                    </ul>
+
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính / suy ra</span>
+                    </div>
+                </div>
+
                 <div class="quick-info-box">
                     <strong>Ghi chú:</strong> Nhập đầy đủ các thông số ở cột bên phải rồi nhấn Tính toán để hiển thị các bước giải chi tiết.
                 </div>

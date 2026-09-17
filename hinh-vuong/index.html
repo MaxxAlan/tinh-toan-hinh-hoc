@@ -84,15 +84,33 @@
             </svg>
         </div>
                 <div class="formula-box">
-            <h2><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Công Thức Tính</h2>
-            <ul>
-                <li>Chu vi: \(C = 4a\)</li>
-                <li>Diện tích: \(S = a^2\)</li>
-                <li>Đường chéo: \(d = a\sqrt{2}\)</li>
-                <li>Bán kính ngoại tiếp: \(R = \dfrac{a\sqrt{2}}{2}\)</li>
-                <li>Bán kính nội tiếp: \(r = \dfrac{a}{2}\)</li>
-            </ul>
-        </div>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-c" data-inputs="a">
+                            Chu vi: <span class="var-token" data-var="C">C</span> = 4<span class="var-token" data-var="a">a</span>
+                        </li>
+                        <li id="fm-s" data-inputs="a">
+                            Diện tích: <span class="var-token" data-var="S">S</span> = <span class="var-token" data-var="a">a</span>²
+                        </li>
+                        <li id="fm-d" data-inputs="a">
+                            Đường chéo: <span class="var-token" data-var="d">d</span> = <span class="var-token" data-var="a">a</span>√2
+                        </li>
+                        <li id="fm-R" data-inputs="a">
+                            Bán kính ngoại tiếp: <span class="var-token" data-var="R">R</span> = <span class="var-token" data-var="a">a</span>√2/2
+                        </li>
+                        <li id="fm-r" data-inputs="a">
+                            Bán kính nội tiếp: <span class="var-token" data-var="r">r</span> = <span class="var-token" data-var="a">a</span>/2
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
+
                 <div class="quick-info-box">
                     <strong>Ghi chú:</strong> Nhập đầy đủ các thông số ở cột bên phải rồi nhấn Tính toán để hiển thị các bước giải chi tiết.
                 </div>
@@ -202,6 +220,31 @@
             ]);
         }
         
+    </script>
+<script>
+        function watchFormulas() {
+            var valA = parseFloat(document.getElementById('inputA').value);
+            var hasA = !isNaN(valA) && valA > 0;
+            document.querySelectorAll('.var-token').forEach(function(el) { el.classList.remove('var-known','var-target'); });
+            document.querySelectorAll('.formula-box li').forEach(function(el) { el.classList.remove('formula-ready'); });
+            if (hasA) {
+                document.querySelectorAll('.var-token[data-var="a"]').forEach(function(el) { el.classList.add('var-known'); });
+                ['fm-c','fm-s','fm-d','fm-R','fm-r'].forEach(function(id) {
+                    document.getElementById(id).classList.add('formula-ready');
+                });
+                ['C','S','d','R','r'].forEach(function(v) {
+                    document.querySelectorAll('.var-token[data-var="'+v+'"]').forEach(function(el) { el.classList.add('var-target'); });
+                });
+            }
+        }
+        function updateSvgShape() {
+            var inA = parseFloat(document.getElementById('inputA').value);
+            var labelA = document.getElementById('svgLabelA');
+            labelA.textContent = (!isNaN(inA) && inA > 0) ? ("a = " + inA) : "a";
+        }
+        function handleAll() { watchFormulas(); updateSvgShape(); }
+        window.addEventListener('DOMContentLoaded', handleAll);
+        document.getElementById('inputA').addEventListener('input', handleAll);
     </script>
 </body>
 </html>

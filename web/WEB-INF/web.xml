@@ -63,6 +63,14 @@
         <servlet-name>RhombusController</servlet-name>
         <servlet-class>controller.RhombusController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegularHexagonController</servlet-name>
+        <servlet-class>controller.RegularHexagonController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EllipseController</servlet-name>
+        <servlet-class>controller.EllipseController</servlet-class>
+    </servlet>
 
     <!-- === 3D === -->
     <servlet>
@@ -105,6 +113,33 @@
         <servlet-name>RegularTetrahedronController</servlet-name>
         <servlet-class>controller.RegularTetrahedronController</servlet-class>
     </servlet>
+
+    <!-- === New 3D Shapes & Formulas === -->
+    <servlet>
+        <servlet-name>OctahedronController</servlet-name>
+        <servlet-class>controller.OctahedronController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DodecahedronController</servlet-name>
+        <servlet-class>controller.DodecahedronController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IcosahedronController</servlet-name>
+        <servlet-class>controller.IcosahedronController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SphericalCapController</servlet-name>
+        <servlet-class>controller.SphericalCapController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SphericalSegmentController</servlet-name>
+        <servlet-class>controller.SphericalSegmentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdvancedFormulasController</servlet-name>
+        <servlet-class>controller.AdvancedFormulasController</servlet-class>
+    </servlet>
+
 
     <!-- === Mappings === -->
     <servlet-mapping>
@@ -151,6 +186,16 @@
         <servlet-name>RhombusController</servlet-name>
         <url-pattern>/hinh-thoi</url-pattern>
         <url-pattern>/RhombusController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegularHexagonController</servlet-name>
+        <url-pattern>/hinh-luc-giac-deu</url-pattern>
+        <url-pattern>/RegularHexagonController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EllipseController</servlet-name>
+        <url-pattern>/hinh-elip</url-pattern>
+        <url-pattern>/EllipseController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CuboidController</servlet-name>
@@ -201,6 +246,38 @@
         <servlet-name>RegularTetrahedronController</servlet-name>
         <url-pattern>/tu-dien-deu</url-pattern>
         <url-pattern>/RegularTetrahedronController</url-pattern>
+    </servlet-mapping>
+
+    <!-- === New 3D Shapes & Formulas Mappings === -->
+    <servlet-mapping>
+        <servlet-name>OctahedronController</servlet-name>
+        <url-pattern>/bat-dien-deu</url-pattern>
+        <url-pattern>/OctahedronController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DodecahedronController</servlet-name>
+        <url-pattern>/muoi-hai-mat-deu</url-pattern>
+        <url-pattern>/DodecahedronController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IcosahedronController</servlet-name>
+        <url-pattern>/hai-muoi-mat-deu</url-pattern>
+        <url-pattern>/IcosahedronController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SphericalCapController</servlet-name>
+        <url-pattern>/chom-cau</url-pattern>
+        <url-pattern>/SphericalCapController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SphericalSegmentController</servlet-name>
+        <url-pattern>/doi-cau</url-pattern>
+        <url-pattern>/SphericalSegmentController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdvancedFormulasController</servlet-name>
+        <url-pattern>/cong-thuc-nang-cao</url-pattern>
+        <url-pattern>/AdvancedFormulasController</url-pattern>
     </servlet-mapping>
 
     <filter-mapping>

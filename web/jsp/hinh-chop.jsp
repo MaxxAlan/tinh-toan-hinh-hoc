@@ -87,6 +87,25 @@
                             Diện tích xung quanh (gần đúng): <span class="var-token" data-var="Sxq">S<sub>xq</sub></span> = (1/2) × C<sub>đáy</sub> × l
                         </li>
                     </ul>
+                        <li id="fm-rmc-1">
+                            \(R_{mc}\) (Cạnh bên \(SA \perp\) đáy): \(R_{mc} = \sqrt{R_{\text{đáy}}^2 + \dfrac{SA^2}{4}}\)
+                        </li>
+                        <li id="fm-rmc-2">
+                            \(R_{mc}\) (Chóp đều đỉnh \(S\), tâm đáy \(O\)): \(R_{mc} = \dfrac{SA^2}{2 \cdot SO}\)
+                        </li>
+                        <li id="fm-rmc-3">
+                            \(R_{mc}\) (Mặt bên ⊥ đáy, giao tuyến \(GT\)): \(R_{mc} = \sqrt{R_{\text{đáy}}^2 + R_{\text{bên}}^2 - \dfrac{GT^2}{4}}\)
+                        </li>
+                        <li id="fm-ti-so-chop-tu-giac">
+                            Tỉ số thể tích chóp tứ giác đáy bình hành: \(\dfrac{V'}{V} = \dfrac{x+y+z+t}{4xyzt}\) (với \(x+z=y+t\))
+                        </li>
+                        <li id="fm-khoang-cach-3net">
+                            Khoảng cách chân đường vuông góc (3 nét vẽ): \(\dfrac{1}{HK^2} = \dfrac{1}{SH^2} + \dfrac{1}{HI^2} \implies HK = \dfrac{SH \cdot HI}{\sqrt{SH^2+HI^2}}\)
+                        </li>
+                        <li id="fm-doi-diem">
+                            Công thức đổi điểm tính khoảng cách: \(\dfrac{d(A,(\alpha))}{d(B,(\alpha))} = \dfrac{IA}{IB}\)
+                        </li>
+                    </ul>
                     <div class="formula-legend">
                         <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
                         <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>

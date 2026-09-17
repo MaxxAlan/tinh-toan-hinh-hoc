@@ -84,14 +84,30 @@
             </svg>
         </div>
                 <div class="formula-box">
-            <h2><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Công Thức Tính</h2>
-            <ul>
-                <li>Chu vi: \(C = 2(a + b)\)</li>
-                <li>Diện tích: \(S = a \times b\)</li>
-                <li>Đường chéo: \(d = \sqrt{a^2 + b^2}\)</li>
-                <li>Bán kính ngoại tiếp: \(R = \dfrac{d}{2} = \dfrac{\sqrt{a^2 + b^2}}{2}\)</li>
-            </ul>
-        </div>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-c" data-inputs="a,b">
+                            Chu vi: <span class="var-token" data-var="C">C</span> = 2(<span class="var-token" data-var="a">a</span> + <span class="var-token" data-var="b">b</span>)
+                        </li>
+                        <li id="fm-s" data-inputs="a,b">
+                            Diện tích: <span class="var-token" data-var="S">S</span> = <span class="var-token" data-var="a">a</span> × <span class="var-token" data-var="b">b</span>
+                        </li>
+                        <li id="fm-d" data-inputs="a,b">
+                            Đường chéo: <span class="var-token" data-var="d">d</span> = √(<span class="var-token" data-var="a">a</span>² + <span class="var-token" data-var="b">b</span>²)
+                        </li>
+                        <li id="fm-R" data-inputs="a,b">
+                            Bán kính ngoại tiếp: <span class="var-token" data-var="R">R</span> = d/2
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
+
                 <div class="quick-info-box">
                     <strong>Ghi chú:</strong> Nhập đầy đủ các thông số ở cột bên phải rồi nhấn Tính toán để hiển thị các bước giải chi tiết.
                 </div>

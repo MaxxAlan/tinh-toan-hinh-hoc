@@ -88,13 +88,27 @@
             </svg>
         </div>
                 <div class="formula-box">
-            <h2><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Công Thức Tính</h2>
-            <ul>
-                <li>Đường sinh: \(l = \sqrt{h^2 + (r - r')^2}\)</li>
-                <li>Thể tích: \(V = \dfrac{\pi h}{3}\left(r^2 + rr' + r'^2\right)\)</li>
-                <li>Diện tích xung quanh: \(S_{xq} = \pi(r + r')\cdot l\)</li>
-            </ul>
-        </div>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        Công Thức Tính
+                    </h2>
+                    <ul id="formulaList">
+                        <li id="fm-l" data-inputs="r1,r2,h">
+                            Đường sinh: <span class="var-token" data-var="l">l</span> = √((<span class="var-token" data-var="r1">r₁</span>-<span class="var-token" data-var="r2">r₂</span>)² + <span class="var-token" data-var="h">h</span>²)
+                        </li>
+                        <li id="fm-v" data-inputs="r1,r2,h">
+                            Thể tích: <span class="var-token" data-var="V">V</span> = (1/3)π<span class="var-token" data-var="h">h</span>(<span class="var-token" data-var="r1">r₁</span>² + <span class="var-token" data-var="r1">r₁</span><span class="var-token" data-var="r2">r₂</span> + <span class="var-token" data-var="r2">r₂</span>²)
+                        </li>
+                        <li id="fm-sxq" data-inputs="r1,r2,h">
+                            Diện tích xung quanh: <span class="var-token" data-var="Sxq">S<sub>xq</sub></span> = π(<span class="var-token" data-var="r1">r₁</span>+<span class="var-token" data-var="r2">r₂</span>)<span class="var-token" data-var="l">l</span>
+                        </li>
+                    </ul>
+                    <div class="formula-legend">
+                        <span class="legend-item"><span class="legend-dot dot-known"></span> <strong>Xanh</strong>: Đã nhập</span>
+                        <span class="legend-item"><span class="legend-dot dot-target"></span> <strong>Vàng</strong>: Sẽ tính</span>
+                    </div>
+                </div>
+
                 <div class="quick-info-box">
                     <strong>Ghi chú:</strong> Nhập đầy đủ các thông số ở cột bên phải rồi nhấn Tính toán để hiển thị các bước giải chi tiết.
                 </div>

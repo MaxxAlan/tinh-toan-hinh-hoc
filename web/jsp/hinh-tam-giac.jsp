@@ -88,6 +88,15 @@
                             Bán kính ngoại tiếp: <span class="var-token" data-var="R">R</span> = abc/(4S)
                         </li>
                         <li id="fm-r" data-inputs="a,b,c">
+                        <li id="fm-cosin">
+                            Định lý Cosin: \(a^2 = b^2 + c^2 - 2bc\cos A\)
+                        </li>
+                        <li id="fm-sin">
+                            Định lý Sin: \(\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R\)
+                        </li>
+                        <li id="fm-s-angle">
+                            Diện tích theo góc: \(S = \dfrac{1}{2}ab\sin C = \dfrac{1}{2}bc\sin A\)
+                        </li>
                             Bán kính nội tiếp: <span class="var-token" data-var="r">r</span> = S/p
                         </li>
                     </ul>
