@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    
-    <!-- === Home Clean URL === -->
+
+    <!-- FrontController duy nhat: URL chuan ?page=hinh-cau, khong lo .jsp/.html -->
     <servlet>
-        <servlet-name>HomeController</servlet-name>
-        <servlet-class>controller.HomeController</servlet-class>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>HomeController</servlet-name>
+        <servlet-name>FrontController</servlet-name>
+        <url-pattern>/app</url-pattern>
+    </servlet-mapping>
+    <!-- Alias cu giu backward-compat, deu ve FrontController -->
+    <servlet-mapping>
+        <servlet-name>FrontController</servlet-name>
         <url-pattern>/tinh-toan-hinh-hoc</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>HomeController</servlet-name>
+        <servlet-name>FrontController</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>HomeController</servlet-name>
+        <servlet-name>FrontController</servlet-name>
         <url-pattern>/trang-chu</url-pattern>
     </servlet-mapping>
 
@@ -23,272 +28,13 @@
         <filter-name>Utf8Filter</filter-name>
         <filter-class>filter.Utf8Filter</filter-class>
     </filter>
-
-    <!-- === Existing === -->
-    <servlet>
-        <servlet-name>CircleController</servlet-name>
-        <servlet-class>controller.CircleController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RectangleController</servlet-name>
-        <servlet-class>controller.RectangleController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SquareController</servlet-name>
-        <servlet-class>controller.SquareController</servlet-class>
-    </servlet>
-
-    <!-- === 2D New === -->
-    <servlet>
-        <servlet-name>TriangleController</servlet-name>
-        <servlet-class>controller.TriangleController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EquilateralTriangleController</servlet-name>
-        <servlet-class>controller.EquilateralTriangleController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RightTriangleController</servlet-name>
-        <servlet-class>controller.RightTriangleController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>TrapezoidController</servlet-name>
-        <servlet-class>controller.TrapezoidController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ParallelogramController</servlet-name>
-        <servlet-class>controller.ParallelogramController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RhombusController</servlet-name>
-        <servlet-class>controller.RhombusController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RegularHexagonController</servlet-name>
-        <servlet-class>controller.RegularHexagonController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EllipseController</servlet-name>
-        <servlet-class>controller.EllipseController</servlet-class>
-    </servlet>
-
-    <!-- === 3D === -->
-    <servlet>
-        <servlet-name>CuboidController</servlet-name>
-        <servlet-class>controller.CuboidController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CubeController</servlet-name>
-        <servlet-class>controller.CubeController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PrismController</servlet-name>
-        <servlet-class>controller.PrismController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PyramidController</servlet-name>
-        <servlet-class>controller.PyramidController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>TruncatedPyramidController</servlet-name>
-        <servlet-class>controller.TruncatedPyramidController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CylinderController</servlet-name>
-        <servlet-class>controller.CylinderController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ConeController</servlet-name>
-        <servlet-class>controller.ConeController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>TruncatedConeController</servlet-name>
-        <servlet-class>controller.TruncatedConeController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SphereController</servlet-name>
-        <servlet-class>controller.SphereController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RegularTetrahedronController</servlet-name>
-        <servlet-class>controller.RegularTetrahedronController</servlet-class>
-    </servlet>
-
-    <!-- === New 3D Shapes & Formulas === -->
-    <servlet>
-        <servlet-name>OctahedronController</servlet-name>
-        <servlet-class>controller.OctahedronController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DodecahedronController</servlet-name>
-        <servlet-class>controller.DodecahedronController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>IcosahedronController</servlet-name>
-        <servlet-class>controller.IcosahedronController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SphericalCapController</servlet-name>
-        <servlet-class>controller.SphericalCapController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SphericalSegmentController</servlet-name>
-        <servlet-class>controller.SphericalSegmentController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AdvancedFormulasController</servlet-name>
-        <servlet-class>controller.AdvancedFormulasController</servlet-class>
-    </servlet>
-
-
-    <!-- === Mappings === -->
-    <servlet-mapping>
-        <servlet-name>CircleController</servlet-name>
-        <url-pattern>/hinh-tron</url-pattern>
-        <url-pattern>/CircleController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RectangleController</servlet-name>
-        <url-pattern>/hinh-chu-nhat</url-pattern>
-        <url-pattern>/RectangleController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SquareController</servlet-name>
-        <url-pattern>/hinh-vuong</url-pattern>
-        <url-pattern>/SquareController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TriangleController</servlet-name>
-        <url-pattern>/hinh-tam-giac</url-pattern>
-        <url-pattern>/TriangleController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EquilateralTriangleController</servlet-name>
-        <url-pattern>/tam-giac-deu</url-pattern>
-        <url-pattern>/EquilateralTriangleController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RightTriangleController</servlet-name>
-        <url-pattern>/tam-giac-vuong</url-pattern>
-        <url-pattern>/RightTriangleController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TrapezoidController</servlet-name>
-        <url-pattern>/hinh-thang</url-pattern>
-        <url-pattern>/TrapezoidController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ParallelogramController</servlet-name>
-        <url-pattern>/hinh-binh-hanh</url-pattern>
-        <url-pattern>/ParallelogramController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RhombusController</servlet-name>
-        <url-pattern>/hinh-thoi</url-pattern>
-        <url-pattern>/RhombusController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegularHexagonController</servlet-name>
-        <url-pattern>/hinh-luc-giac-deu</url-pattern>
-        <url-pattern>/RegularHexagonController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EllipseController</servlet-name>
-        <url-pattern>/hinh-elip</url-pattern>
-        <url-pattern>/EllipseController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CuboidController</servlet-name>
-        <url-pattern>/hop-chu-nhat</url-pattern>
-        <url-pattern>/CuboidController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CubeController</servlet-name>
-        <url-pattern>/hinh-lap-phuong</url-pattern>
-        <url-pattern>/CubeController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PrismController</servlet-name>
-        <url-pattern>/lang-tru</url-pattern>
-        <url-pattern>/PrismController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PyramidController</servlet-name>
-        <url-pattern>/hinh-chop</url-pattern>
-        <url-pattern>/PyramidController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TruncatedPyramidController</servlet-name>
-        <url-pattern>/hinh-chop-cut</url-pattern>
-        <url-pattern>/TruncatedPyramidController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CylinderController</servlet-name>
-        <url-pattern>/hinh-tru</url-pattern>
-        <url-pattern>/CylinderController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ConeController</servlet-name>
-        <url-pattern>/hinh-non</url-pattern>
-        <url-pattern>/ConeController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TruncatedConeController</servlet-name>
-        <url-pattern>/hinh-non-cut</url-pattern>
-        <url-pattern>/TruncatedConeController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SphereController</servlet-name>
-        <url-pattern>/hinh-cau</url-pattern>
-        <url-pattern>/SphereController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegularTetrahedronController</servlet-name>
-        <url-pattern>/tu-dien-deu</url-pattern>
-        <url-pattern>/RegularTetrahedronController</url-pattern>
-    </servlet-mapping>
-
-    <!-- === New 3D Shapes & Formulas Mappings === -->
-    <servlet-mapping>
-        <servlet-name>OctahedronController</servlet-name>
-        <url-pattern>/bat-dien-deu</url-pattern>
-        <url-pattern>/OctahedronController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DodecahedronController</servlet-name>
-        <url-pattern>/muoi-hai-mat-deu</url-pattern>
-        <url-pattern>/DodecahedronController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>IcosahedronController</servlet-name>
-        <url-pattern>/hai-muoi-mat-deu</url-pattern>
-        <url-pattern>/IcosahedronController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SphericalCapController</servlet-name>
-        <url-pattern>/chom-cau</url-pattern>
-        <url-pattern>/SphericalCapController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SphericalSegmentController</servlet-name>
-        <url-pattern>/doi-cau</url-pattern>
-        <url-pattern>/SphericalSegmentController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AdvancedFormulasController</servlet-name>
-        <url-pattern>/cong-thuc-nang-cao</url-pattern>
-        <url-pattern>/AdvancedFormulasController</url-pattern>
-    </servlet-mapping>
-
     <filter-mapping>
         <filter-name>Utf8Filter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 
     <welcome-file-list>
@@ -300,6 +46,8 @@
             <url-pattern>*.jsp</url-pattern>
             <page-encoding>UTF-8</page-encoding>
             <response-encoding>UTF-8</response-encoding>
+            <!-- Cam scriptlet: JSP chi duoc EL + JSTL -->
+            <scripting-invalid>true</scripting-invalid>
         </jsp-property-group>
     </jsp-config>
 </web-app>
