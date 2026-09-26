@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3182ce"/>
+      <stop offset="100%" stop-color="#1a365d"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6e05e"/>
+      <stop offset="100%" stop-color="#d69e2e"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="64" height="64" rx="15" fill="url(#bgGrad)"/>
+
+  <!-- Eke (Set Square / Drafting Triangle) -->
+  <polygon points="12,52 52,52 12,12" fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" filter="url(#shadow)"/>
+  <polygon points="19,46 41,46 19,24" fill="url(#bgGrad)" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- Right angle marker on Set Square -->
+  <path d="M 12 43 L 20 43 L 20 52" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+
+  <!-- Ruler ticks -->
+  <line x1="26" y1="52" x2="26" y2="48" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="33" y1="52" x2="33" y2="48" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="12" y1="36" x2="16" y2="36" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="12" y1="29" x2="16" y2="29" stroke="#ffffff" stroke-width="1.5"/>
+
+  <!-- Drafting Compass (Com-pa) -->
+  <!-- Legs -->
+  <line x1="43" y1="16" x2="25" y2="53" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" filter="url(#shadow)"/>
+  <line x1="43" y1="16" x2="54" y2="48" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" filter="url(#shadow)"/>
+  <!-- Compass head & hinge -->
+  <circle cx="43" cy="16" r="4.5" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="43" cy="16" r="1.5" fill="#ffffff"/>
+  <line x1="43" y1="8" x2="43" y2="12" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
