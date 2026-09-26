@@ -95,10 +95,15 @@ function bindShape(p) {
   const upd = () => liveUpdate(scope);
   form.querySelectorAll('input[name]').forEach(i => i.addEventListener('input', upd));
   upd();
-  form.addEventListener('submit', ev => {
-    ev.preventDefault();
+  const numInputs = () => Array.from(form.querySelectorAll('input[type="number"][name]'));
+  const valsOf = () => {
     const v = {};
-    form.querySelectorAll('input[name]').forEach(i => { v[i.name] = i.value; });
+    numInputs().forEach(i => { v[i.name] = i.value; });
+    return v;
+  };
+  const anyFilled = () => numInputs().some(i => String(i.value).trim() !== '');
+  const doCalculate = () => {
+    const v = valsOf();
     const calc = CALCS[p];
     if (!calc) return;
     const out = calc.run(v);
@@ -109,12 +114,22 @@ function bindShape(p) {
     Object.keys(v).forEach(k => { if (String(v[k]).trim() !== '') q.set(k, String(v[k]).trim()); });
     window.history.replaceState(null, '', '?' + q.toString());
     typeset();
+  };
+  form.addEventListener('submit', ev => {
+    ev.preventDefault();
+    if (!anyFilled()) { // chua nhap gi: hien nhac mac dinh, khong hien hop loi do
+      document.getElementById('errBox').style.display = 'none';
+      if (form.reportValidity) form.reportValidity();
+      else {
+        const first = form.querySelector('input[name]');
+        if (first) first.focus();
+      }
+      return;
+    }
+    doCalculate();
   });
-  // auto-run neu URL co san input
-  const params = qs();
-  let hasInput = false;
-  form.querySelectorAll('input[name]').forEach(i => { if (params.get(i.name)) hasInput = true; });
-  if (hasInput) form.dispatchEvent(new Event('submit'));
+  // auto-run chi khi URL co san it nhat 1 gia tri
+  if (anyFilled()) doCalculate();
 }
 
 function render() {
